@@ -1,0 +1,244 @@
+{
+    "info": {
+        "_postman_id": "b114e97a-e409-4c4a-bada-b724c9a7310e",
+        "name": "Accura API - VideoKYC",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Passport - MRZ-OCR (detail card)",
+            "id": "d45c883e-739f-4a09-8a64-a66366f7c8b3",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Api-Key",
+                        "value": "1619675713P0u6PPdU7wTMYSp1qe6c2QXLRrITFehu5JwhqvhS",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "liveness_image",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/faces/mahdi.jpg",
+                            "disabled": true
+                        },
+                        {
+                            "key": "country_code",
+                            "value": "ARE",
+                            "type": "text"
+                        },
+                        {
+                            "key": "card_code",
+                            "value": "MRZ",
+                            "type": "text"
+                        },
+                        {
+                            "key": "scan_image",
+                            "type": "file",
+                            "src": "/Users/ap/Downloads/mrtestvertical.png"
+                        }
+                    ]
+                },
+                "url": "https://accurascan.com/api/v4/ocr"
+            },
+            "response": []
+        },
+        {
+            "name": "facematch (face verification)",
+            "id": "b6dfff2a-de1c-4340-8e39-e5a017e41907",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Api-Key",
+                        "value": "f1619675926D71dJqFH7YHW0k50Y1pDrgfoWGS1ZwAEYdAsXOGg",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "source_file",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/MRZ/Passports/Aadhya_Passport copy.jpg"
+                        },
+                        {
+                            "key": "target_file",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/MRZ/Passports/22.jpg"
+                        }
+                    ]
+                },
+                "url": "https://accurascan.com/v2/api/facematch"
+            },
+            "response": []
+        },
+        {
+            "name": "liveness (face verification)",
+            "id": "8aa9e577-7358-4548-9803-7b6b099f6327",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Api-Key",
+                        "value": "161967602657epCN8hdbhHo9n5yqryUiP9J3tHyvXnUSmAJnen",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Api-Key",
+                        "value": "",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "liveness_image",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/faces/mahdi.jpg"
+                        }
+                    ]
+                },
+                "url": "https://accurascan.com/v2/api/liveness"
+            },
+            "response": []
+        },
+        {
+            "name": "aml (aml status button)",
+            "id": "832cd1b0-38bf-4b5f-89eb-e34301b26add",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Api-Key",
+                        "value": "a1614159036jIA7BkFFAvPpZ9ogJb7rX72gJ0lrzIBFRkYqrd0X",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Api-Key",
+                        "value": "f1603259442T646P9ibEfoRUDRBSxINrrpzMmvs4sc7MVqPyG9z",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "firstName",
+                            "value": "Nirav",
+                            "type": "text"
+                        },
+                        {
+                            "key": "lastName",
+                            "value": "Modi",
+                            "type": "text"
+                        },
+                        {
+                            "key": "matchRate",
+                            "value": "50",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "https://accurascan.com/api/v1/aml/check"
+            },
+            "response": []
+        },
+        {
+            "name": "Aadhar - India KYC (detail card)",
+            "id": "4b7401be-0991-4481-b191-07e1b0d1b366",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Api-Key",
+                        "value": "i1619676135LGZx1lF4uspKUgw4TRynYau730UhIKDKISCNq7wn",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "file",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/ID by countries/India/Aadhaar/1frontandback.png"
+                        }
+                    ]
+                },
+                "url": "https://accurascan.com/api/v1/ocr/aadhaar"
+            },
+            "response": []
+        },
+        {
+            "name": "OCR (detail card)",
+            "id": "b03212c4-178f-468b-a3cc-c915aa8ad893",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Api-Key",
+                        "value": "1619675713P0u6PPdU7wTMYSp1qe6c2QXLRrITFehu5JwhqvhS",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "liveness_image",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/faces/mahdi.jpg",
+                            "disabled": true
+                        },
+                        {
+                            "key": "country_code",
+                            "value": "SGP",
+                            "type": "text"
+                        },
+                        {
+                            "key": "card_code",
+                            "value": "SINID",
+                            "type": "text"
+                        },
+                        {
+                            "key": "scan_image",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/ID by countries/Singapore/singapore id.jpg"
+                        }
+                    ]
+                },
+                "url": "https://accurascan.com/api/v4/ocr"
+            },
+            "response": []
+        },
+        {
+            "name": "ID forgery (doc1, doc2, doc3 etc buttons)",
+            "id": "8084e776-086f-40f0-9a33-26d86ed09429",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "input_image",
+                            "type": "file",
+                            "src": "/Users/ap/Documents/Accura/Testing Documents/ID by countries/India/Aadhaar/1frontandback.png"
+                        }
+                    ]
+                },
+                "url": "http://96.126.126.189:8080/api"
+            },
+            "response": []
+        }
+    ]
+}

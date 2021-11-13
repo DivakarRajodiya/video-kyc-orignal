@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login Page</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- animate CSS -->
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                    <a class="navbar-brand" href="index.html"> <img id="logo" src="images/logo-site.png" alt="logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div id="error_message" style="display: none;">
+        <div class="dropdown-us allow2" id="error_message_text"></div>
+    </div>
+    <div class="login-wd" id="feedback_form" style="top: 100px; display: none;">
+        <div class="login-wd-bg">
+            <h1 class="login-wd-title">Please rate the video call..</h1>
+
+            <div class="gray-modal-bg clearfix">
+                <div class="modal-left-s" id="feedback">
+                    <input type="range" value="0" step="0.5" id="backing5" />
+                    <div id="ratestars" class="rateit" data-rateit-backingfld="#backing5" data-rateit-resetable="false"
+                        data-rateit-min="0" data-rateit-max="5"></div>
+                    <br />
+                    <textarea cols="35" rows="10" id="feedback_message"></textarea>
+                    <button id="feedback-button" class="finish-form">Rate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wd-video-box" id="wd-widget-content-greenroom" style="margin: auto; width: 100%; display: none;">
+        <div id="popup_widget_text_videos">
+            <form class="sky-form">
+                <header id="chooseVideoAudio"></header>
+                <fieldset>
+                    <div class="row">
+                        <section class="videoPreviewDiv">
+                            <video id="videoPreview" autoplay="autoplay" playsinline></video>
+                        </section>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <label class="select">
+                            <i class="icon-prepend icon-camera"></i>
+                            <select id="videoSource"></select>
+                            <i class="drop"></i>
+                        </label>
+                    </section>
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="select">
+                                <i class="icon-prepend icon-microphone"></i>
+                                <select id="audioSource"></select>
+                                <i class="drop"></i>
+                            </label>
+                            <label> <input type="checkbox" class="muteAudio" id="muteAudio" /> <span class="muteMe">Mute
+                                    me</span> </label>
+                        </section>
+
+                        <section class="col col-6">
+                            <label class="select">
+                                <i class="icon-prepend icon-headphones"></i>
+                                <select id="audioOutput"></select>
+                                <i class="drop"></i>
+                            </label>
+                            <label> <input type="checkbox" class="muteVideo" id="muteVideo" /> <span
+                                    class="turnOffCamera">Turn off camera</span> </label>
+                        </section>
+                    </div>
+                </fieldset>
+                <footer>
+                    <div class="modal-left-s">
+                        <button type="button" id="startVideoButton"></button>
+                    </div>
+                </footer>
+            </form>
+        </div>
+    </div>
+    <div class="wd-video-box" id="ng_info" style="margin: auto; width: 100%; display: none;">
+        <div id="popup_widget_text_videos">
+            <form class="sky-form">
+                <div class="login-wd" id="ng_info">
+                    <div class="login-wd-bg">
+                        <h1 class="login-wd-title" id="login-conference-title">Please fill in the name field below:</h1>
+
+                        <div class="gray-modal-bg clearfix">
+                            <div class="modal-left-s">
+                                <input type="text" class="f-wd-i" name="ng_caller_name" id="ng_caller_name"
+                                    placeholder="Name" />
+                                <input type="text" class="s-wd-i" name="ng_caller_email" id="ng_caller_email"
+                                    placeholder="E-mail" style="display: none;" />
+                                <input type="text" class="f-wd-i" name="ng_caller_avatar" id="ng_caller_avatar"
+                                    placeholder="Avatar" style="display: none;" />
+                                <input type="password" class="f-wd-i" name="ng_password" id="ng_password"
+                                    placeholder="Password" style="display: none;" />
+                                <div id="cameraMicChoose">
+                                    <input type="checkbox" class="muteVideo" id="muteVideo1" /> <label
+                                        for="muteVideo1"><span class="turnOffCamera">Turn off
+                                            camera</span></label><br />
+                                    <input type="checkbox" class="muteAudio" id="muteAudio1" /> <label
+                                        for="muteAudio1"><span class="muteMe">Mute me</span></label>
+                                </div>
+                                <button type="button" id="continue-button" class="finish-form">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="invideo" style="display: none;">
+        <div id="formito_chat" class="formito-launcher reveal">
+            <div class="fo-app">
+                <header class="flexbox align-items-center p-12 pr-20 bg-lighter bb-1 border-light">
+                    <div class="media align-items-center p-0">
+                        <div class="media-body">
+                            <h6><a href="javascript:void(0);" id="peer_name_chat"></a></h6>
+                            <small id="typing"></small>
+                        </div>
+                    </div>
+
+                    <div class="dropdown" id="showProfile" style="display: none;">
+                        <a id="attendees_menu" href="javascript:void(0);" data-provide="tooltip"
+                            data-tooltip-color="primary" data-placement="right"
+                            data-original-title="Attendees and Organizers">
+                            <span id="fausers" class="icon fa fa-users"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" id="attendees" style="display: none;">
+                            <ul class="list-unstyled" id="attendeesList"></ul>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <div id="visitor_message" style="display: none;">
+                                        <span id="send_message_to"></span>
+                                        <div class="box-footer-private">
+                                            <input class="publisher-input" id="private_message_small"
+                                                style="width: 100px; margin: 8px;" />
+                                            <button id="private_message_button" />
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="scrollable flex-grow" id="chat-content"></div>
+                <footer class="publisher">
+                    <input class="publisher-input" id="newdev_chat_message1" placeholder="Write something" />
+                    <!--<div contenteditable="true" class="publisher-input" id="newdev_chat_message1"></div>-->
+                    <div class="align-self-end gap-items">
+                        <span class="publisher-btn file-group">
+                            <i class="fa fa-paperclip file-browser" id="file_transfer"></i>
+                        </span>
+                        <a class="publisher-btn" href="javascript:void(0);"><i id="newdev_chat_button1"
+                                class="fa fa-paper-plane"></i></a>
+                    </div>
+                </footer>
+            </div>
+            <div class="fo-icon">
+                <div class="fo-close">×</div>
+            </div>
+            <div class="new_chat_badge_container" style="display: none;">
+                <span class="new_chat_badge">&nbsp;</span>
+            </div>
+        </div>
+        <!-- vedio -->
+        <main>
+            <section class="video_sec grey_bg">
+                <div class="container">
+                    <div class="row tab-block">
+                        <div class="col-left" id="colLeftPanel">
+                            <!-- vedio  -->
+                            <div class="row mob-col">
+                                <div class="wd-video-box" id="wd-widget-content-video"
+                                    style="width:auto;display: none;">
+                                    <div class="wd-video-box-on" style="display: block;">
+                                        <div class="wd-video">
+                                            <div id="video_container_small" class="video_container_small"></div>
+                                            <div id="video_container" class="video_container">
+                                                <a href="javascript:void(0);" title="" id="fullScreen"
+                                                    style="display: none;"><i id="fullscreenButton"
+                                                        class="fa fa-arrows-alt"></i></a>
+                                                <a href="javascript:void(0);" title="" id="exitFullScreen"
+                                                    style="display: none;"><i id="exitFullscreenButton"
+                                                        class="fa fa-compress"></i></a>
+
+                                                <video id="remoteScreen" class="sourcescreen" autoplay="autoplay"
+                                                    muted="muted" playsinline
+                                                    style="background: transparent; background-size: 100%; display: block;"></video>
+
+                                                <canvas id="snapshotCanvas" style="display: none;"></canvas>
+                                                <img class="recordingIcon" src="../img/recording.png"
+                                                    style="display: none;" />
+                                                <span id="translate_message" class="translate_message"
+                                                    style="display: none;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /end vedio -->
+
+                            <!-- vedio action -->
+                            <div class="row mob-col video-actions-container">
+                                <div class="col-4">
+                                    <div id="local_video_div" class="localvideo_div">
+                                        <video id="localVideo" class="localvideo" playsinline autoplay muted
+                                            poster="../img/small-avatar.jpg"
+                                            style="background: transparent; background-size: 100%;"></video>
+                                        <video id="localScreen" class="localvideo" autoplay="autoplay" muted="muted"
+                                            playsinline style="display: none;"></video>
+                                    </div>
+                                </div>
+                                <div class="col-8 video-actions">
+                                    <ul class="controlbtn abc">
+                                        <li id="showHideVideoLi">
+                                            <a href="javascript:void(0);" id="showHideVideo">
+                                                <i class="fa fa-video-camera"></i>
+                                                <br>
+                                                <span>Show/Hide Video</span></a>
+                                        </li>
+                                        <li id="showHideAudio">
+                                            <a href="javascript:void(0);" id="showHideAudio">
+                                                <i class="fa fa-microphone-slash"></i>
+                                                <br>
+                                                <span>Mute/Unmute Video</span></a>
+                                        </li>
+
+                                        <li id="cameraSwitch">
+                                            <a href="javascript:void(0);" id="switchcamera">
+                                                <i class="fa fa-camera"></i>
+
+                                                <br>
+                                                <span>Switch Camera</span></a>
+                                        </li>
+                                        <!--<li id="screensharestop_div" >
+                                            <a href="javascript:void(0);" id="stopscreenshare"
+                                                class="btn btn-float active"><i class="fa fa-tv"></i></a>
+                                        </li>
+                                        <li id="whiteboardLi" >
+                                            <a href="javascript:void(0);" id="whiteboard" class="btn btn-float"><i
+                                                    class="fa fa-edit"></i></a>
+                                        </li>-->
+                                    </ul>
+                                    <ul class="controlbtn abc1">
+                                        <li id="screenshareLi">
+                                            <a href="javascript:void(0);" id="startscreenshare">
+                                                <i class="fa fa-tv"></i>
+                                                <br>
+                                                <span>Share Screen</span></a>
+                                        </li>
+                                        
+                                        <li id="snapshotLi">
+                                            <a id="snapshot" href="javascript:void(0);" class="btn btn-float">
+                                                <i class="fa fa-file-image-o"></i>
+                                            </a>
+                                        </li>
+                                        
+                                        <li id="recordingLi">
+                                            <a id="startRecording" href="javascript:void(0);">
+                                                <i class="fa fa-circle"></i>
+                                                <br>
+                                                <span>Recording</span>
+                                            </a>
+                                        </li>
+                                        <!--<li id="raisehandLi">
+                                            <a id="raisehand" href="javascript:void(0);" class="btn btn-float"><i
+                                                    class="fa fa-hand-paper-o"></i></a>
+                                        </li>
+                                        <li id="changeViewLi">
+                                            <a id="changeView" href="javascript:void(0);" class="btn btn-float"><i
+                                                    id="gridicon" class="fa fa-th-large"></i></a>
+                                        </li>-->
+                                        <li id="exit_meeting_div">
+                                            <a id="end_meeting" href="javascript:void(0);">
+                                                <i class="fa fa-sign-out"></i>
+                                                <br>
+                                                <span>End Meeting</span></a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- <div class="control-recording" id="recording_message">
+                                        <a class="recordinglink" href="" target="_blank">Click to download</a>
+                                        <a href="javascript:void(0);" title=""
+                                            class="close-but-wd-small"><span></span></a>
+                                    </div>
+                                    <div class="control-recording d-n" id="snapshotData">
+                                        <a download="snapshot.png" id="snapshotLink" href="" target="_blank">Click to
+                                            download</a>
+                                        <a href="javascript:void(0);" title=""
+                                            class="close-but-wd-small"><span></span></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Right Column -->
+                        <div class="col-right" style="min-height:300px;margin-bottom: 100px;">
+                            <div id="colRightPanel" class="d-none">
+                                <div class="row pb-space">
+                                    <div class="head-title">
+                                        <img src="images/idcard-icon.png"><span>ID Verification</span>
+                                    </div>
+                                </div>
+                                <div class="row pb-space data-card mob-col">
+                                    <!--code modified by yashwant thakur-->
+                                    <div class="col-3 gradient-01 card">
+                                        <h3 class="text-center">Aadhar</h3>
+                                        <div id="myAadhar">
+                                            <p class="text-left"><label>Name : #</label></p>
+                                            <p class="text-left"><label>ID No. : #</label></p>
+                                            <p class="text-left"><label>DOB : #</label></p>
+                                            <p class="text-left"><label>Gender : #</label></p>
+                                            <br />
+                                        </div>
+                                        <center><a href="javascript:" class="vbtn d-n" id="verifyAadhar">Verify</a>
+                                        </center>
+                                    </div>
+
+                                    <div class="col-3 gradient-01 card">
+                                        <h3 class="text-center">PAN</h3>
+                                        <div id="myPan">
+                                            <p class="text-left"><label>Name : #</label></p>
+                                            <p class="text-left"><label>ID No. : #</label></p>
+                                            <p class="text-left"><label>DOB : #</label></p>
+                                            <p class="text-left"><label>Father's Name : #</label></p>
+                                            <br />
+                                        </div>
+                                        <center><a href="javascript:" class="vbtn d-n" id="verifyPan">Verify</a>
+                                        </center>
+                                    </div>
+                                    <div class="col-3 gradient-01 card">
+                                        <h3 class="text-center">Passport</h3>
+                                        <div id="myPass">
+                                            <p class="text-left"><label>Country : #</label></p>
+                                            <p class="text-left"><label>Name : #</label></p>
+                                            <p class="text-left"><label>ID No. : #</label></p>
+                                            <p class="text-left"><label>DOB : #</label></p>
+                                            <p class="text-left"><label>Gender : #</label></p>
+                                            <p class="text-left"><label>DOE : #</label></p>
+                                        </div>
+                                        <center><a href="javascript:" class="vbtn d-n" id="verifyPass">Verify</a>
+                                        </center>
+                                    </div>
+                                </div>
+
+                                <div class="row pb-space">
+                                    <div class="face-sec">
+                                        <div class="head-title pb-space">
+                                            <img src="images/face-icon.png"><span>
+                                                <a href="javascript:" onclick="fVerifyFm('aadhaar')" style="color:#fff">
+                                                    Face Verification
+                                                </a></span>
+                                        </div>
+                                        <div class="nbts">
+                                            <ul>
+                                                <li><img src="images/check.png">
+                                                    <a href="javascript:" onclick="fVerifyFm('aadhaar')">Face Match</a>:
+                                                    <span id="fMatch"></span>
+                                                </li>
+                                                <li><img src="images/check.png">
+                                                    <a href="javascript:"
+                                                        onclick="fVerifyLiveness('aadhaar')">Liveness</a>: <span
+                                                        id="liveness"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row  pb-space">
+                                    <div class="head-title">
+                                        <span>Document Verified</span>
+                                    </div>
+                                </div>
+
+                                <div class="row pb-space">
+                                    <div class="doc-sec">
+                                        <div class="col-3 mr-md-10  gradient-01 card text-center" id="doc-aadhaar-bg">
+                                            <img src="images/doc.png">
+                                            <p><a href="javascript:" style="color: #fff;"
+                                                    onclick="fVerifyDocs('aadhaar')">Aadhaar</a></p>
+                                        </div>
+                                        <div class="col-3 mr-md-10  gradient-01 card text-center" id="doc-pan-bg">
+                                            <img src="images/doc.png">
+                                            <p><a href="javascript:" style="color: #fff;"
+                                                    onclick="fVerifyDocs('pan')">PAN</a></p>
+                                        </div>
+                                        <div class="col-3 mr-md-10 gradient-01 card text-center" id="doc-passport-bg">
+                                            <img src="images/doc.png">
+                                            <p><a href="javascript:" style="color: #fff;"
+                                                    onclick="fVerifyDocs('passport')">Passport</a></p>
+                                        </div>
+                                        <div class="col-3 mr-md-10 gradient-01 card text-center" id="doc-other-bg">
+                                            <img src="images/doc.png" style="color: #fff;" id="doc-other">
+                                            <p>Other</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row pb-space">
+                                    <div class="doc-action">
+                                        <a class="col-6 gradient-01 btn2 text-center">
+                                            <img src="images/signature-icon.png"><span>Capture Signature</span>
+                                        </a>
+                                        <a class="col-6 gradient-01 btn2 text-center">
+                                            <img src="images/aml-icon.png"><span>AML Status</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="row pb-space">
+                                    <div class="doc-action">
+                                        <a class="col-6 gradient-02 btn2 text-center">
+                                            <img src="images/sig-icon.png"><span>Sig Image</span>
+                                        </a>
+                                        <a class="col-6 gradient-01 btn2 text-center">
+                                            <span>Clear / Not Clear </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row pb-space">
+                                    <div class="control-recording" id="recording_message">
+                                        <a class="recordinglink" href="" target="_blank">Click to download</a>
+                                        <a href="javascript:void(0);" title=""
+                                            class="close-but-wd-small"><span></span></a>
+                                    </div>
+                                    <div class="control-recording d-n" id="snapshotData" style="display: none;">
+                                        <a download="snapshot.png" id="snapshotLink" href="" target="_blank">Click to
+                                            download</a>
+                                        <a href="javascript:void(0);" title=""
+                                            class="close-but-wd-small"><span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end of Right col -->
+                    </div>
+
+                    <div class="wd-video-box" id="unsupported_div" style="display: none;">
+                        <div class="wd-video-c">
+                            <a href="javascript:void(0)" class="wd-v-text trn-link" style="display: none;" title="">
+                                <div class="swipe_text">
+                                    chat<br />
+                                    screen
+                                </div>
+                                <div class="new_chat_badge_container" style="display: none;">
+                                    <span class="new_chat_badge">&nbsp;</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wd-video-box-off" id="unsupported_browser">
+                            <div class="wd-attention-screen" style="padding-top: 20px;">
+                                <p>Unsupported Browser</p>
+                                <span id="not_supported"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wd-video-box" id="wd-widget-error" style="display: none;">
+                        <div class="wd-video-box-off">
+                            <div class="wd-attention-screen" id="permission_browsers_error">
+                                <div style="padding: auto; display: none;" id="permission_div_error_chrome"><img
+                                        src="../img/permission_error_chrome.png" class="permission_error_image" />
+                                </div>
+                                <div style="padding: auto; display: none;" id="permission_div_error_firefox"><img
+                                        src="../img/permission_error_firefox.png" class="permission_error_image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wd-video-box" id="permission_div" style="display: none;">
+                        <div class="wd-video-box-off">
+                            <div class="wd-attention-screen" id="permission_browsers">
+                                <span id="permission_div_span" style="margin: 5px;"></span>
+                                <div style="padding: auto; display: none;" id="permission_div_ie"><img
+                                        src="../img/permission_ie.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_safari"><img
+                                        src="../img/permission_safari.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_safarivideo"><img
+                                        src="../img/permission_safari.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_chrome"><img
+                                        src="../img/permission_chrome.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_chromevideo"><img
+                                        src="../img/permission_chrome_video.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_firefox"><img
+                                        src="../img/permission_firefox.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_firefoxvideo"><img
+                                        src="../img/permission_firefox_video.png" class="permission_image" /></div>
+                                <div style="padding: auto; display: none;" id="permission_div_defaultvideo"><img
+                                        src="../img/permission_chrome.png" class="permission_image" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wd-video-box" id="wd-widget-content-chat-main" style="display: none;">
+                        <div class="wd-video-c">
+                            <div id="video_container_chat" class="video_container" style="display: none;">
+                                <img class="recordingIcon" src="../img/recording.png" style="display: none;" />
+                            </div>
+                            <div id="private_message" class="wd-attention-screen"
+                                style="padding-top: 20px; display: none; text-align: center; position: absolute; top: 200px; left: 50px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wd-video-box" id="wd-widget-content-whiteboard" style="display: none;">
+                        <div id="whiteboard_canvas"></div>
+                        <div id="whiteboard_video"></div>
+                        <footer class="site-footer">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:void(0);" title="Cancel whiteboard session"
+                                                    id="toVideo" style="display: none;"
+                                                    class="btn btn-float btn-white wd-v-tovideo"><i
+                                                        class="fa fa-video-camera"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" title="Clear whiteboard session"
+                                                    id="cleanCanvas" style="display: none;"
+                                                    class="btn btn-float btn-white"><i class="fa fa-eraser"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);" title="Download" id="downloadCanvas"
+                                                    style="display: none;" class="btn btn-float btn-white"><i
+                                                        class="fa fa-download"></i></a>
+                                            </li>
+                                            <li id="raisehandLi1" style="display: none;">
+                                                <a id="raisehand1" href="javascript:void(0);" class="btn btn-float"><i
+                                                        class="fa fa-hand-paper-o"></i></a>
+                                            </li>
+                                        </ul>
+                                        <div class="control-recording" id="canvasData" style="display: none;">
+                                            <a download="image.png" id="canvasLink" href="" target="_blank"></a>
+                                            <a href="javascript:void(0);" title=""
+                                                class="close-but-wd-small"><span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <input type="file" name="files" id="filetransfer" />
+
+    </div>
+    <script src="../js/html2canvas.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+
+    <script type="text/javascript">
+        // console.log("abc");
+        var cardone;
+        cardonename = '';
+        cardonegender = '';
+        cardonemothername = '';
+        cardonedob = '';
+        cardonenumber = '';
+        cardonescanned = '';
+        cardonefm = '';
+
+
+        var cardtwo;
+        cardtwoname = '';
+        cardtwofathername = '';
+        cardtwodob = '';
+        cardtwonumber = '';
+        cardtwoscanned = '';
+        cardtwofm = '';
+
+        var cardtwo;
+        cardthreename = '';
+        cardthreefathername = '';
+        cardthreedob = '';
+        cardthreenumber = '';
+        cardthreescanned = '';
+        cardthreefm = '';
+        cardthreecountry = '';
+        cardthreedoe = '';
+        cardthreegender = '';
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+
+        var blog = getUrlParameter('isAdmin');
+        if (blog == 1) {
+            /*$('#verifyFm').removeClass('d-none');
+            $('#verifyLiveness').removeClass('d-none');
+            $('#verifyAadhar').removeClass('d-none');
+            $('#verifyPan').removeClass('d-none');*/
+            $('#colRightPanel').removeClass('d-none');
+
+            if(screen.width<=800){ 
+                $('.col-4').css({
+                    bottom: "150px",
+                    left: "auto",
+                });
+                $('.col-8').css({
+                    bottom: "25px"
+                });
+            }
+
+        } else {
+            //$('.col-left').css({ height: "100vh" });
+            $('.controlbtn li:nth-child(n)').css({ "display": "none" });
+            $('.abc li:nth-child(1)').css({ "display": "inline-block" });
+            $('.abc li:nth-child(2)').css({ "display": "inline-block" });
+            $('.abc li:nth-child(4)').css({ "display": "inline-block" });
+
+            $('#startscreenshare').css("display", "none");
+            
+            
+            if(screen.width<=480){ 
+                $('body').css({
+                    overflow: "hidden"
+                });
+                $('.col-4').css({
+                    bottom: "100px",
+                });
+            }
+
+        }
+        $('#snapshotLi').css({"position":"fixed","left":"-100px","display":"none"});
+        $('#snapshot').css("display", "none");
+        // var element = $("#toimage"); // global variable
+        // var element = jQuery("#toimage")[0];
+        // var getCanvas; // global variable
+
+        //start: code added by yashwant thakur
+        var vmyAadhar = document.getElementById('myAadhar');
+        //end
+        $("#verifyAadhar").on('click', function () {
+
+            $('#snapshot').click();
+            var image = $('#snapshotLink').attr('href');
+            //console.log("aad image aai");
+
+            //console.log(image);
+            cardone = image;
+            //image;
+
+
+            if (cardonescanned == true) {
+                //start: the code to switch aadhar details on aadhar slot
+                vmyAadhar.innerHTML =
+                    `<p class="text-left"><label>Name: ${cardonename}</label></p>
+                    <p class="text-left"><label>ID No.: ${cardonenumber}</label></p>
+                    <p class="text-left"><label>DOB: ${cardonedob}</label></p>
+                    <p class="text-left"><label>Gender: ${cardonegender}</label></p><br />`;
+                //end
+
+            } //else 
+            cardonescanned = false;
+            {
+
+                //
+                $.ajax({
+                    url: "https://dev.accurascan.com/api/v1/ocr/aadhaar",
+                    headers: { 'Api-Key': 'i1620376509p5iZRbQ3pdv1P9fkY3WoaPB48zxmluZEi3DdWrxe' },
+                    data: {
+                        file: cardone
+                        //image 
+                    },
+                    type: "POST",
+                    success: function (result) {
+                        var result = JSON.parse(result);
+                        //console.log(result);
+                        //console.log(result);
+                        if (result['status_code'] == 200 && result['success'] == true) {
+                            cardonescanned = true;
+                        } else { console.log(result['message']); return false; }
+
+                        cardonename = result['data']['ocr_fields'][0]['full_name']['value'];
+                        cardonegender = result['data']['ocr_fields'][0]['gender']['value'];
+                        cardonedob = result['data']['ocr_fields'][0]['dob']['value'];
+                        cardonenumber = result['data']['ocr_fields'][0]['aadhaar_number']['value'];
+
+                        //start: the code to switch aadhar details on aadhar slot
+                        vmyAadhar.innerHTML =
+                            `<p class="text-left"><label>Name: ${cardonename}</label></p>
+                            <p class="text-left"><label>ID No.: ${cardonenumber}</label></p>
+                            <p class="text-left"><label>DOB: ${cardonedob}</label></p>
+                            <p class="text-left"><label>Gender: ${cardonegender}</label></p><br />`;
+                        //end
+                        //console.log("Name: " + cardonename + "\nNumber: " + cardonenumber + "\nGender: " + cardonegender + " \nMothers Name: " + cardonemothername + "\nDOB: " + cardonedob);
+                        resizeBase64Img(cardone, 300, 300).then((result) => {
+                            //console.log("After resize: "+result);
+                            setTimeout(function () {
+                                updVisitorInfo('aadhaar',
+                                    {
+                                        cardonename: cardonename,
+                                        cardonegender: cardonegender,
+                                        cardonedob: cardonedob,
+                                        cardonenumber: cardonenumber,
+                                        image: result ? result : cardone
+                                    });
+                                    getVisitorInfo();
+                            }, 3000);
+                            //fVerifyFm(cardone, 'aadhaar');
+                            //fVerifyLiveness('aadhaar');
+                        });
+                    },
+                    error: function (error) {
+                        console.log('Some error occured while scanning aadhaar, try again..!');
+                        console.log(error);
+                    }
+                })
+
+            }
+
+        });
+        //code update by yashwant thakur
+        var vmyPan = document.getElementById('myPan');
+
+        $("#verifyPan").on('click', function () {
+            $('#snapshot').click();
+            var image = $('#snapshotLink').attr('href');
+
+            cardtwo = image;
+            //image;
+
+            if (cardtwoscanned == true) {
+
+                //console.log("Name: " + cardtwoname + "\nNumber: " + cardtwonumber + " \nFathers Name: " + cardtwofathername + "\nDOB: " + cardtwodob);
+                //start: the code to switch pan details on aadhar slot
+                vmyPan.innerHTML =
+                    `<p class="text-left"><label>Name:</label> ${cardtwoname}</p>
+                    <p class="text-left"><label>ID No.:</label> ${cardtwonumber}</p>
+                    <p class="text-left"><label>DOB: ${cardonedob}</label></p>
+                    <p class="text-left"><label>Father's Name: ${cardtwofathername}</label></p><br />`;
+                //end
+
+
+            } 
+            cardtwoscanned = false;
+            //else 
+            {
+                $.ajax({
+                    url: "https://dev.accurascan.com/api/v1/ocr/pan",
+                    headers: { 'Api-Key': 'i1620376509p5iZRbQ3pdv1P9fkY3WoaPB48zxmluZEi3DdWrxe' },
+                    data: {
+                        file: cardtwo
+                        //image 
+                    },
+                    type: "POST",
+                    success: function (result) {
+                        var result = JSON.parse(result);
+                        //console.log(result);
+                        if (result['status_code'] == 200 && result['success'] == true) {
+                            cardtwoscanned = true;
+                        } else { console.log(result['message']); return false; }
+                        cardtwoname = result['data']['ocr_fields'][0]['full_name']['value'];
+                        // cardonegender = result['data']['ocr_fields'][0]['gender']['value'];
+                        cardtwodob = result['data']['ocr_fields'][0]['dob']['value'];
+                        cardtwonumber = result['data']['ocr_fields'][0]['pan_number']['value'];
+                        cardtwofathername = result['data']['ocr_fields'][0]['father_name']['value'];
+
+
+                        //start: the code to switch aadhar details on aadhar slot
+                        vmyPan.innerHTML =
+                            `<p class="text-left"><label>Name: ${cardtwoname}</label></p>
+                            <p class="text-left"><label>ID No.: ${cardtwonumber}</label></p>
+                            <p class="text-left"><label>DOB: ${cardtwodob}</label></p>
+                            <p class="text-left"><label>Father's Name: ${cardtwofathername}</label></p><br />`;
+                        //end
+                        resizeBase64Img(cardtwo, 300, 300).then((result) => {
+                            //console.log("After resize: "+result);
+                            setTimeout(function () {
+                                updVisitorInfo('pan',
+                                    {
+                                        cardtwoname: cardtwoname,
+                                        cardtwonumber: cardtwonumber,
+                                        cardtwodob: cardtwodob,
+                                        cardtwofathername: cardtwofathername,
+                                        image: result ? result : cardtwo
+                                    });
+                            }, 3000);
+                            //fVerifyFm(cardtwo, 'pan');
+                            //fVerifyLiveness('pan');
+                        });
+                    },
+                    error: function (error) {
+                        console.log("Some error occurred while scanning pan, try again..!");
+                        console.log(error);
+                    }
+                })
+            }
+        });
+
+        //code update by yashwant thakur
+        var vmyPass = document.getElementById('myPass');
+
+        $("#verifyPass").on('click', function () {
+            $('#snapshot').click();
+            var image = $('#snapshotLink').attr('href');
+            //console.log(image);
+            cardthree = image;
+            //image;
+
+            if (cardthreescanned == true) {
+
+                //start: the code to switch pan details on aadhar slot
+                vmyPass.innerHTML =
+                    `<p class="text-left"><label>Country : ${cardthreecountry}</label></p>
+                            <p class="text-left"><label>Name : ${cardthreename}</label></p>
+                            <p class="text-left"><label>ID No. : ${cardthreenumber}</label></p>
+                            <p class="text-left"><label>DOB : ${cardthreedob}</label></p>
+                            <p class="text-left"><label>Gender : ${cardthreegender}</label></p>
+                            <p class="text-left"><label>DOE : ${cardthreedoe}</label></p>`;
+                //end
+
+
+            } 
+            cardthreescanned = false;
+            //else 
+            {
+                $.ajax({
+                    url: "https://dev.accurascan.com/api/v4/ocr",
+                    headers: { 'Api-Key': '1620626909gj6gUnLhp3k9egZAM9xevcjd1039MJd4uJ1lgr1t' },
+                    data: {
+                        country_code: 'IND', card_code: 'MRZ', scan_image_base64: cardthree
+                        //image 
+                    },
+                    type: "POST",
+                    success: function (result) {
+                        //console.log(result);
+                        var result = JSON.parse(result);
+                        //console.log(result);
+                        //if (result['status_code'] == 200 && result['success'] == true) {
+                        cardthreescanned = true;
+                        //}  else { 
+                        //console.log(result['message']); return false;
+                        //}
+                        cardthreename = `${result['data']['MRZdata'] && result['data']['MRZdata']['first_name'] ? result['data']['MRZdata'] && result['data']['MRZdata']['first_name'] : 'NF'} ${result['data']['MRZdata'] && result['data']['MRZdata']['last_name'] ? result['data']['MRZdata']['last_name'] : 'NF'}`;
+                        cardthreegender = result['data']['MRZdata'] && result['data']['MRZdata']['sex'] ? result['data']['MRZdata']['sex'] : 'NF';
+                        cardthreedob = result['data']['MRZdata'] && result['data']['MRZdata']['date_of_birth'] ? result['data']['MRZdata']['date_of_birth'] : 'NF';
+                        cardthreecountry = result['data']['MRZdata'] && result['data']['MRZdata']['country'] ? result['data']['MRZdata']['country'] : 'NF';
+                        cardthreenumber = result['data']['MRZdata'] && result['data']['MRZdata']['document_no'] ? result['data']['MRZdata']['document_no'] : 'NF';
+                        cardthreedoe = result['data']['MRZdata'] && result['data']['MRZdata']['date_of_expiry'] ? result['data']['MRZdata']['date_of_expiry'] : '';
+
+                        //start: the code to switch passport details on passport slot
+                        vmyPass.innerHTML =
+                            `<p class="text-left"><label>Country : ${cardthreecountry}</label></p>
+                            <p class="text-left"><label>Name : ${cardthreename}</label></p>
+                            <p class="text-left"><label>ID No. : ${cardthreenumber}</label></p>
+                            <p class="text-left"><label>DOB : ${cardthreedob}</label></p>
+                            <p class="text-left"><label>Gender : ${cardthreegender}</label></p>
+                            <p class="text-left"><label>DOE : ${cardthreedoe}</label></p>`;
+                        //end
+                        resizeBase64Img(cardthree, 300, 300).then((result) => {
+                            //console.log("After resize: "+result);
+                            setTimeout(function () {
+                                updVisitorInfo('passport',
+                                    {
+                                        cardthreecountry: cardthreecountry,
+                                        cardthreename: cardthreename,
+                                        cardthreenumber: cardthreenumber,
+                                        cardthreedob: cardthreedob,
+                                        cardthreegender: cardthreegender,
+                                        cardthreedoe: cardthreedoe,
+                                        image: result ? result : cardthree
+                                    });
+                            }, 3000);
+                            //fVerifyFm(cardthree, 'passport');
+                            //fVerifyLiveness('passport');
+                        });
+                    },
+                    error: function (error) {
+                        console.log("Some error occurred while scanning passport, try again..!");
+                        console.log(error);
+                    }
+                })
+            }
+        });
+
+        function fVerifyDocs(vid) { //$("#verifyLiveness").on('click', 
+            var vimage = vid == "aadhaar" ? cardone : vid == "pan" ? cardtwo : vid == "passport" ? cardthree : cardone;
+
+            $.ajax({
+                url: "http://96.126.126.189:8000/api",
+                headers: { 'Api-Key': '1620632348AQNgEt0tTVyYPMdr2BlTXrTpBQmpx14SaPzAUZFy' },
+                data: { input_image: vimage },
+                type: "POST",
+                success: function (result) {
+                    //console.log(result);
+                    if (result['data']['score'] > 0) {
+                        document.getElementById(`doc-${vid}-bg`).style.background = "green";
+                    }
+                    updVisitorInfo(`doc-${vid}`,
+                        {
+                            score: result['data'] && result['data']['score'] ? result['data']['score'] : 0
+                        });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        } //)
+        function fVerifyLiveness(vid) { //$("#verifyLiveness").on('click', 
+            $('#snapshot').click();
+            var image = $('#snapshotLink').attr('href');
+            //console.log("liveness");
+            //console.log(image);
+            $.ajax({
+                url: "https://dev.accurascan.com/v2/api/liveness",
+                headers: { 'Api-Key': '1620632348AQNgEt0tTVyYPMdr2BlTXrTpBQmpx14SaPzAUZFy' },
+                data: { liveness_image: image },
+                type: "POST",
+                success: function (result) {
+                    console.log(result);
+                    document.getElementById('liveness').innerHTML =
+                        `${result['data'] && result['data']['score'] ? result['data']['score'] : 0}`;
+
+                    updVisitorInfo(`LV-${vid}`,
+                        {
+                            score: result['data'] && result['data']['score'] ? result['data']['score'] : 0
+                        });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        } //)
+
+
+        function fVerifyFm(vid = "aadhaar") { //$("#verifyFm").on('click', 
+            //console.log(vid);
+
+            var vimage = vid == "aadhaar" ? cardone : vid == "pan" ? cardtwo : vid == "passport" ? cardthree : cardone;
+            $('#snapshot').click();
+            var image = $('#snapshotLink').attr('href');
+            console.log("FM image aai");
+            //console.log(vimage);
+            $.ajax({
+                url: "https://dev.accurascan.com/v2/api/facematch",
+                headers: { 'Api-Key': 'f1620632402P0S3sgeCoRHzLvwr3mwxY0jT3isgzFmeMSUsgtlp' },
+                data: { source_image_base64: image, target_image_base64: vimage },
+                type: "POST",
+                success: function (result) {
+                    //console.log(result);
+                    cardonefm = result['data']['match_score'];
+                    document.getElementById('fMatch').innerHTML = `${result['data']['match_score'] ? result['data']['match_score'] : 0}`;
+                    //console.log(cardonefm);
+                    updVisitorInfo(`FM-${vid}`, {
+                        match_score: result['data']['match_score']//(result['data']['match_score'].replace('%','')).trim()
+                    });
+
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+            fVerifyLiveness(vid);
+        }//);
+        function updVisitorInfo(vid = null, vdataObj = []) {
+            let params = (new URL(document.location)).searchParams;
+            let room = params.get('room'); // room id
+
+            var dataObj = { 'type': 'videokyc', 'room': room, 'id': vid, 'data': vdataObj };
+            //console.log(dataObj);
+            $.ajax({
+                type: 'POST',
+                url: '../server/script.php',
+                data: dataObj
+            })
+            .done(function (data) {
+                //console.log(data);
+                data=JSON.parse(data);
+                console.log(`${vid.toUpperCase()}: ${data['msg']}-${data['message']}`);
+                getVisitorInfo();
+            })
+            .fail(function () {
+                $('#error').html('<span>Some error occurred</span>');
+                getVisitorInfo();
+                return false;
+            });
+        }
+        function getVisitorInfo(vid = null, vdataObj = []) {
+            let params = (new URL(document.location)).searchParams;
+            let room = params.get('room'); // room id
+            let vLV = 0, vFM = "0%";
+            var dataObj = { 'type': 'videokyc', 'room': room, 'id': vid, 'data': vdataObj };
+            $.ajax({
+                type: 'POST',
+                url: '../server/script.php',
+                data: dataObj
+            })
+                .done(function (data) {
+                    //console.log("Output: ",data);
+                    vdata = JSON.parse(data);
+                    if (vdata['aadhaar']) {
+                        vLV = vdata['aadhaar']['LV'] ? vdata['aadhaar']['LV']['score'] : 0;
+                        vFM = vdata['aadhaar']['FM'] ? vdata['aadhaar']['FM']['match_score'] : 0;
+                        cardonescanned = true;
+                        //start: the code to switch aadhar details on aadhar slot
+                        vmyAadhar.innerHTML =
+                            `<p class="text-left"><label>Name: ${vdata['aadhaar']['cardonename']}</label></p>
+                <p class="text-left"><label>ID No.: ${vdata['aadhaar']['cardonenumber']}</label></p>
+                <p class="text-left"><label>DOB: ${vdata['aadhaar']['cardonedob']}</label></p>
+                <p class="text-left"><label>Gender: ${vdata['aadhaar']['cardonegender']}</label></p><br />`;
+                        cardone = vdata["aadhaar"]['image'];
+                        if (vdata['aadhaar']['doc'])
+                            document.getElementById(`doc-aadhaar-bg`).style.background = "green";
+                        else
+                            document.getElementById(`doc-aadhaar-bg`).style.background = "linear-gradient(180deg, rgba(105,105,105,1) 0%, rgba(56,56,56,1) 100%)";
+                        //fVerifyFm('aadhaar');
+                    }
+                    if (vdata['pan']) {
+                        //vLV=vdata['pan']['LV']?vdata['pan']['LV']['score']:vLV?vLV:0;
+                        //vFM=vdata['pan']['FM']?vdata['pan']['FM']['match_score']:vFM?vFM:0;
+                        cardtwoscanned = true;
+
+                        //console.log("Name: " + cardtwoname + "\nNumber: " + cardtwonumber + " \nFathers Name: " + cardtwofathername + "\nDOB: " + cardtwodob);
+                        //start: the code to switch pan details on aadhar slot
+                        vmyPan.innerHTML =
+                            `<p class="text-left"><label>Name:</label> ${vdata['pan']['cardtwoname']}</p>
+                    <p class="text-left"><label>ID No.:</label> ${vdata['pan']['cardtwonumber']}</p>
+                    <p class="text-left"><label>DOB: ${vdata['pan']['cardtwodob']}</label></p>
+                    <p class="text-left"><label>Father's Name: ${vdata['pan']['cardtwofathername']}</label></p><br />`;
+                        cardtwo = vdata["pan"]['image'];
+                        if (vdata['pan']['doc'])
+                            document.getElementById(`doc-pan-bg`).style.background = "green";
+                        else document.getElementById(`doc-pan-bg`).style.background = "linear-gradient(180deg, rgba(105,105,105,1) 0%, rgba(56,56,56,1) 100%)";
+                    }
+                    if (vdata['passport']) {
+                        //vLV=vdata['passport']['LV']?vdata['passport']['LV']['score']:vLV?vLV:0;
+                        //vFM=vdata['passport']['FM']?vdata['passport']['FM']['match_score']:vFM?vFM:0;
+                        cardthreescanned = true;
+
+                        //start: the code to switch pan details on aadhar slot
+                        vmyPass.innerHTML =
+                            `<p class="text-left"><label>Country : ${vdata['passport']['cardthreecountry']}</label></p>
+                        <p class="text-left"><label>Name : ${vdata['passport']['cardthreename']}</label></p>
+                        <p class="text-left"><label>ID No. : ${vdata['passport']['cardthreenumber']}</label></p>
+                        <p class="text-left"><label>DOB : ${vdata['passport']['cardthreedob']}</label></p>
+                        <p class="text-left"><label>Gender : ${vdata['passport']['cardthreegender']}</label></p>
+                        <p class="text-left"><label>DOE : ${vdata['passport']['cardthreedoe']}</label></p>`;
+                        cardthree = vdata["passport"]['image'];
+                        if (vdata['passport']['doc'])
+                            document.getElementById(`doc-passport-bg`).style.background = "green";
+                        else document.getElementById(`doc-passport-bg`).style.background = "linear-gradient(180deg, rgba(105,105,105,1) 0%, rgba(56,56,56,1) 100%)";
+                    }
+                    else {
+                        console.log('No record found');
+                    }
+                    document.getElementById('liveness').innerHTML = vLV ? vLV : 0;
+                    document.getElementById('fMatch').innerHTML = vFM ? vFM : 0;
+
+                })
+                .fail(function () {
+                    $('#error').html('<span>Some error occurred</span>');
+                    return false;
+                });
+        }
+        function resizeBase64Img(base64, newWidth, newHeight) {
+            return new Promise((resolve, reject) => {
+                var canvas = document.createElement("canvas");
+                canvas.style.width = newWidth.toString() + "px";
+                canvas.style.height = newHeight.toString() + "px";
+                let context = canvas.getContext("2d");
+                let img = document.createElement("img");
+                img.src = base64;
+                img.onload = function () {
+                    context.scale(newWidth / img.width, newHeight / img.height);
+                    context.drawImage(img, 0, 0);
+                    resolve(canvas.toDataURL());
+                }
+            });
+        }
+        getVisitorInfo();
+        
+    </script>
+   
+</body>
+
+</html>

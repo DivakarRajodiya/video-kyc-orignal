@@ -1,0 +1,2104 @@
+<div id="error_message" style="display: none">
+
+    <div class="dropdown-us allow2" id="error_message_text">
+
+    </div>
+    <div class="dropdown-us allow3" id="timer_message_text">
+
+    </div>
+</div>
+<div class="login-wd" id="feedback_form" style="top:100px; display: none;">
+    <div class="login-wd-bg">
+        <h1 class="login-wd-title">Please rate the video call:</h1>
+
+        <div class="gray-modal-bg clearfix">
+            <div class="modal-left-s" id="feedback">
+                <input type="range" value="0" step="0.5" id="backing5">
+                <div id="ratestars" class="rateit" data-rateit-backingfld="#backing5" data-rateit-resetable="false"  data-rateit-min="0" data-rateit-max="5">
+                </div>
+                <br/>
+                <textarea cols=35 rows="10" id="feedback_message"></textarea>
+                <button id="feedback-button" class="finish-form">Rate</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wd-video-box" id="wd-widget-content-greenroom" style="margin: auto; width: 100%; display: none">
+    <div id="popup_widget_text_videos">
+        <form class="sky-form">
+            <header id="chooseVideoAudio"></header>
+            <fieldset>
+                <div class="row">
+                    <section class="videoPreviewDiv" >
+                        <video id="videoPreview" autoplay="autoplay" playsinline></video>
+                    </section>
+                </div>
+            </fieldset>
+            <fieldset>
+                <section >
+                    <label class="select">
+                        <i class="icon-prepend icon-camera"></i>
+                        <select id="videoSource"></select>
+                        <i class="drop"></i>
+                    </label>
+                </section>
+                <div class="row">
+
+
+                    <section class="col col-6">
+
+                        <label class="select">
+                            <i class="icon-prepend icon-microphone"></i>
+                            <select id="audioSource" ></select>
+                            <i class="drop"></i>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="muteAudio" id="muteAudio"> <span class="muteMe">Mute me</span>
+                        </label>
+                    </section>
+
+                    <section class="col col-6">
+                        <label class="select">
+                            <i class="icon-prepend icon-headphones"></i>
+                            <select id="audioOutput"></select>
+                            <i class="drop"></i>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="muteVideo" id="muteVideo"> <span class="turnOffCamera">Turn off camera</span>
+                        </label>
+
+
+                    </section>
+                </div>
+
+            </fieldset>
+            <footer>
+                <div class="modal-left-s">
+                    <button type="button" id="startVideoButton"></button>
+                </div>
+            </footer>
+        </form>
+    </div>
+</div>
+<div class="wd-video-box" id="ng_info" style="margin: auto; width: 100%; display: none">
+    <div id="popup_widget_text_videos">
+        <form class="sky-form">
+            <div class="login-wd" id="ng_info">
+                <div class="login-wd-bg">
+                    <h1 class="login-wd-title" id="login-conference-title">Please fill in the name field below:</h1>
+
+                    <div class="gray-modal-bg clearfix">
+
+                        <div class="modal-left-s">
+                            <input type="text" class="f-wd-i" name="ng_caller_name" id="ng_caller_name" placeholder="Name"/>
+                            <input type="text" class="s-wd-i" name="ng_caller_email" id="ng_caller_email" placeholder="E-mail" style="display: none;"/>
+                            <input type="text" class="f-wd-i" name="ng_caller_avatar" id="ng_caller_avatar" placeholder="Avatar" style="display: none;"/>
+                            <input type="password" class="f-wd-i" name="ng_password" id="ng_password" placeholder="Password" style="display: none;"/>
+                            <div id="cameraMicChoose">
+                                <input type="checkbox" class="muteVideo" id="muteVideo1"> <label for="muteVideo1"><span class="turnOffCamera">Turn off camera</span></label><br/>
+                                <input type="checkbox" class="muteAudio" id="muteAudio1"> <label for="muteAudio1"><span class="muteMe">Mute me</span></label>
+                            </div>
+                            <div id="termsDiv" style="display: none;">
+                                <input type="checkbox" class="terms" id="terms">
+                                <label for="terms"><span id="termsCon">Accept <a href="" id="termsLink">Terms &amp; Conditions</a></span></label>
+                            </div>
+                            <button type="button" id="continue-button" class="finish-form">Continue</button>
+                        </div>
+                        <div class="left" id="socialLogins" style="display: none; ">
+                            <span id="orLoginWith"></span>
+                            <br/>
+                            <button type="button" class="loginSocial" id="facebookLogin" style="display:none;" title="Facebook">
+                                <i class="fa fa-facebook"></i> Facebook
+                            </button>
+                            <button type="button" class="loginSocial" id="googleLogin" style="display:none;" title="Goolge">
+                                <i class="fa fa-google"></i> Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="invideo" style="display: none">
+    <div id="formito_chat" class="formito-launcher reveal">
+        <div class="fo-app">
+            <header class="flexbox align-items-center p-12 pr-20 bg-lighter bb-1 border-light">
+                <div class="media align-items-center p-0">
+                    <div class="media-body">
+                        <h6><a href="javascript:void(0);" id="peer_name_chat"></a></h6>
+                        <small id="typing"></small>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="showProfile" style="display: none;">
+                    <a id="attendees_menu" href="javascript:void(0);" data-provide="tooltip" data-tooltip-color="primary" data-placement="right" data-original-title="Attendees and Organizers">
+                        <span id="fausers" class="icon fa fa-users"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" id="attendees" style="display:none;">
+                        <ul class="list-unstyled" id="attendeesList"></ul>
+                        <ul class="list-unstyled">
+                            <li>
+                                <div id="visitor_message" style="display:none;">
+                                    <span id="send_message_to"></span>
+                                    <div class="box-footer-private">
+                                        <input class="publisher-input" id="private_message_small" style="width: 100px; margin: 8px;">
+                                        <button id="private_message_button" />
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </header>
+
+
+            <div class="scrollable flex-grow" id="chat-content">
+            </div>
+            <footer class="publisher">
+                <input class="publisher-input" id="newdev_chat_message1" placeholder="Write something">
+                <!--<div contenteditable="true" class="publisher-input" id="newdev_chat_message1"></div>-->
+                <div class="align-self-end gap-items">
+                    <span class="publisher-btn file-group">
+                        <i class="fa fa-paperclip file-browser" id="file_transfer"></i>
+
+                    </span>
+                    <a class="publisher-btn" href="javascript:void(0);"><i id="newdev_chat_button1" class="fa fa-paper-plane"></i></a>
+                </div>
+            </footer>
+
+        </div>
+        <div class="fo-icon"><div class="fo-close">×</div></div>
+        <div class="new_chat_badge_container" style="display:none">
+            <span class="new_chat_badge" >&nbsp;</span>
+        </div>
+    </div>
+
+
+    <!-- Main container -->
+    <main class="main-container">
+        <div class="main-content">
+
+            <div class="wd-video-box" id="wd-widget-content-video"  style="display: none">
+                <div class="wd-video-box-on" style="display: block">
+                    <div class="wd-video">
+                        <div id="video_container_small" class="video_container_small">
+
+                        </div>
+                        <div id="video_container" class="video_container">
+                            <!-- <a href="javascript:void(0);" title="" id="fullScreen" style="display:none"><i id="fullscreenButton" class="fa fa-arrows-alt"></i></a>
+                            <a href="javascript:void(0);" title="" id="exitFullScreen" style="display:none"><i id="exitFullscreenButton" class="fa fa-compress"></i></a> -->
+
+                            <video id="remoteScreen" class="sourcescreen" autoplay="autoplay" muted="muted" playsinline
+                                   style="background:transparent; background-size:100%; display: none"></video>
+                            <div id="local_video_div" class="localvideo_div">
+                                <video id="localVideo" class="localvideo" playsinline autoplay muted poster="../img/small-avatar.jpg" style="background:transparent; background-size:100%"></video>
+                                <video id="localScreen" class="localvideo" autoplay="autoplay" muted="muted" playsinline style="display:none"></video>
+                            </div>
+                            <canvas id="snapshotCanvas" style="display: none"></canvas>
+                            <img class="recordingIcon" src="../img/recording.png" style="display:none" />
+                            <span id="translate_message" class="translate_message" style="display: none;"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <footer class="site-footer"> 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="controlbtn">
+                                    <li>
+                                        <a href="javascript:void(0);" id="showHideVideo" class="btn btn-float">
+                                            <i  class="fa fa-video-camera"></i>
+                                        </a>
+                                        <p id="video_text">Video On</p>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" id="showHideAudio" class="btn btn-float active"><i class="fa fa-microphone-slash"></i></a>
+                                        <p id="audio_text">Audio On</p>
+                                    </li>
+                                    <li id="locationLi">
+                                        <a href="javascript:void(0);" id="showHideLocation" class="btn btn-float"><i class="fa fa-map-marker"></i></a>
+                                        <p id="location_text">Location On</p>
+                                    </li>
+                                    <li id="screenshareLi">
+                                        <a href="javascript:void(0);" id="startscreenshare" class="btn btn-float"><i class="fa fa-tv"></i></a>
+                                        <p id="screenshare_text">Screenshare On</p>
+                                    </li>
+                                    <li id="cameraSwitch" style="display: none;"><a href="javascript:void(0);" id="switchcamera" class="btn btn-float"><p class="switch-camera">&nbsp;</p></a>
+                                        <p class="switch-camera_text">Front Camera</p>
+                                    </li>
+                                    <li id="screensharestop_div" style="display: none;"><a href="javascript:void(0);" id="stopscreenshare" class="btn btn-float active"><i class="fa fa-tv"></i></a></li>
+                                    <li id="whiteboardLi" style="display: none;"><a href="javascript:void(0);" id="whiteboard" class="btn btn-float"><i class="fa fa-edit"></i></a></li>
+                                    <li id="snapshotLi" style="display: none;">
+                                        <a id="snapshot" href="javascript:void(0);" class="btn btn-float"><i class="fa fa-file-image-o"></i></a>
+                                        <p id="snapshot_text">Snapshot</p>
+                                    </li>
+                                    <li id="pipLi" style="display: none;"><a id="pipButton" href="javascript:void(0);" class="btn btn-float">&nbsp;<img src="../img/pip.svg" width="18" />&nbsp;</a></li>
+                                    <li id="recordingLi" style="display: none;">
+                                    	<a id="startRecording" href="javascript:void(0);" class="btn btn-float btn-recording"><i class="fa fa-circle"></i></a>
+                                     	<p id="recording_text">Recording On</p>
+                                    </li>
+                                    <li id="raisehandLi" style="display: none;"><a id="raisehand" href="javascript:void(0);" class="btn btn-float"><i class="fa fa-hand-paper-o"></i></a></li>
+                                    <li id="changeViewLi" style="display:none;"><a id="changeView" href="javascript:void(0);" class="btn btn-float"><i id="gridicon" class="fa fa-th-large"></i></a></li>
+                                    <li id="exit_meeting_div">
+                                        <a id="end_meeting" href="javascript:void(0);" class="btn btn-float"><i class="fa fa-sign-out"></i></a>
+                                        <p id="end_meeting_text">Exit</p>
+                                    </li>
+                                    <li id="" class="myBtn" style="display: none;">
+                                        <button id="" class="btn btn-float myBtn" >
+                                            <i class="fa fa-file myBtn"></i>
+                                        </button>
+                                    </li>
+                                    <li id="left-fa-file" class="myBtn kycbutton" style="display: none;">
+                                        <button id="" class="btn btn-float myBtn left-fa-file" >
+                                            <i class="fa fa-file myBtn"></i>
+                                        </button>
+                                    </li>
+                                    <!-- Modal -->
+                                    
+                                </ul>
+                                <div class="control-recording" id="recording_message" style="display: none">
+                                    <a class="recordinglink" href="" target="_blank">Click to download</a>
+                                    <a href="javascript:void(0);" title="" class="close-but-wd-small"><span></span></a>
+                                </div>
+                                <div class="control-recording" id="snapshotData" style="display: none">
+                                    <input type="hidden" id="latlng" value=""> 
+                                    <input type="hidden" id="maplocation" value=""> 
+                                    <a download="snapshot.png" id="snapshotLink" href="" target="_blank">Click to download</a>
+                                    <a href="javascript:void(0);" title="" class="close-but-wd-small"><span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <div class="wd-video-box" id="wd-widget-content-video-waiting" style="display: none">
+
+                <div class="wd-loading-screen">
+                    <p><span id="waitingToConnect">Please wait</span> <span class="loader__dot">.</span><span class="loader__dot">.</span><span class="loader__dot">.</span><br/>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="wd-video-box" id="wd-widget-content-video-ringing" style="display: none">
+                <div class="wd-loading-screen">
+                    <p><span id="incoming_text">Incoming call</span> <span class="loader__dot">.</span><span class="loader__dot">.</span><span class="loader__dot">.</span><br/>
+                        <a href="javascript:void(0)" id="answer_call_button" class="trn-link-img-video" title="Answer Call with Video"><span>Video</span></a>
+                        <a href="javascript:void(0)" id="answer_audiocall_button" class="trn-link-img-audio" title="Answer with Voice Only"><span>Audio</span></a>
+                        <a href="javascript:void(0)" id="reject_call_button" class="trn-link-img-reject" title="Reject Call"><span>Reject</span></a>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="wd-video-box" id="unsupported_div"  style="display: none">
+                <div class="wd-video-c">
+                    <a href="javascript:void(0)" class="wd-v-text trn-link" style="display:none" title="">
+                        <div class="swipe_text">chat<br/>screen</div>
+                        <div class="new_chat_badge_container" style="display:none">
+                            <span class="new_chat_badge" >&nbsp;</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="wd-video-box-off" id="unsupported_browser">
+                    <div class="wd-attention-screen" style="padding-top: 20px">
+                        <p>Unsupported Browser</p>
+                        <span id="not_supported"></span>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="wd-video-box" id="wd-widget-error" style="display: none">
+                <div class="wd-video-box-off" >
+
+                    <div class="wd-attention-screen" id="permission_browsers_error">
+                        <div style="padding: auto; display: none" id="permission_div_error_chrome"><img src="../img/permission_error_chrome.png" class="permission_error_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_error_firefox"><img src="../img/permission_error_firefox.png" class="permission_error_image"></div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="wd-video-box" id="permission_div"  style="display: none">
+
+                <div class="wd-video-box-off" >
+
+                    <div class="wd-attention-screen" id="permission_browsers">
+                        <span id="permission_div_span" style="margin: 5px;"></span>
+                        <div style="padding: auto; display: none" id="permission_div_ie"><img src="../img/permission_ie.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_safari"><img src="../img/permission_safari.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_safarivideo"><img src="../img/permission_safari.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_chrome"><img src="../img/permission_chrome.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_chromevideo"><img src="../img/permission_chrome_video.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_firefox"><img src="../img/permission_firefox.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_firefoxvideo"><img src="../img/permission_firefox_video.png" class="permission_image"></div>
+                        <div style="padding: auto; display: none" id="permission_div_defaultvideo"><img src="../img/permission_chrome.png" class="permission_image"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wd-video-box" id="wd-widget-content-chat-main" style="display: none">
+                <div class="wd-video-c">
+                    <div id="video_container_chat" class="video_container" style="display: none;">
+                        <img class="recordingIcon" src="../img/recording.png" style="display:none" />
+
+
+                    </div>
+                    <div id="private_message" class="wd-attention-screen" style="padding-top: 20px; display: none; text-align: center; position: absolute; top: 200px; left: 50px"></div>
+                </div>
+
+
+            </div>
+            <div class="wd-video-box" id="wd-widget-content-whiteboard" style="display: none">
+
+                <div id="whiteboard_canvas">
+
+                </div>
+                <div id="whiteboard_video">
+
+                </div>
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul>
+                                    <li><a href="javascript:void(0);" title="Cancel whiteboard session" id="toVideo" style="display: none;" class="btn btn-float btn-white wd-v-tovideo"><i class="fa fa-video-camera"></i></a></li>
+                                    <li><a href="javascript:void(0);" title="Clear whiteboard session" id="cleanCanvas" style="display: none;" class="btn btn-float btn-white"><i class="fa fa-eraser"></i></a></li>
+                                    <li><a href="javascript:void(0);" title="Download" id="downloadCanvas" style="display: none;" class="btn btn-float btn-white"><i class="fa fa-download"></i></a></li>
+                                    <li id="raisehandLi1" style="display: none;"><a id="raisehand1" href="javascript:void(0);" class="btn btn-float"><i class="fa fa-hand-paper-o"></i></a></li>
+                                </ul>
+                                <div class="control-recording" id="canvasData" style="display: none">
+                                    <a download="image.png" id="canvasLink" href="" target="_blank"></a>
+                                    <a href="javascript:void(0);" title="" class="close-but-wd-small"><span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- Footer -->
+
+            <!-- END Footer -->
+
+        </div>
+    </main>
+
+</div>
+<input type="file" name="files" id="filetransfer" />
+ <style type="text/css">
+    
+    .blocker {
+        background-color: transparent !important;
+    }
+
+.text-center{
+    text-align: center;
+}
+fieldset {
+    display: none;
+    border: none;
+}
+
+fieldset.show {
+    display: block;
+}
+.pl-3, .px-3 {
+    padding-left: 1rem!important;
+}
+.modal-footer{
+    padding: 13px 20px;
+}
+.modal-header {
+    border-bottom: 1px solid #d4d4d4;
+}
+.modal:focus {
+    outline: none;
+}
+.tabs {
+    margin: 2px 5px 0px 5px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    display: inline-block;
+
+}
+.tabs h6 {
+    color: #6c757d!important;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.tabs.active h6 {
+    font-weight: 700!important;
+    color: #000000!important;
+}
+.tabs:hover,
+.tabs.active {
+    border-bottom: 1px solid #2196F3
+}
+
+a:hover {
+    text-decoration: none;
+    color: #1565C0
+}
+
+.box {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px
+}
+
+.modal-backdrop {
+    background-color: #64B5F6
+}
+
+.line {
+    background-color: #CFD8DC;
+    height: 1px;
+    width: 100%
+}
+.photo-img{
+    width: 47%;
+    height: 180px;
+    padding-top: 10px;
+}
+.camera_dev{
+    display: inline-block;
+    width: 100%;
+}
+.camera_photo{
+    width: 100%;
+    display: none;
+    height: 180px;
+}
+#titalcard{
+    width: 100%;
+}
+#titalcard h2 {
+    color: #D03039;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#result_view{
+    padding:0px;
+    margin-top: 0px;
+}
+.table{
+  width:100%;
+  margin:auto;
+  padding: 10px 0;
+}
+.document_title{
+    background: #D03039;
+    border: 1px solid #D03039;
+    width: 100%;
+    vertical-align: middle;
+    height: 37px;
+}
+
+.document_image{
+    border: 1px solid red;
+    width: 100%;
+}
+
+.document_title p{
+    font-size:17px;
+    color: white;
+    line-height: 36px;
+}
+
+tr.error_css td{
+    border: 1px solid red;
+    background: #D03039;
+    width:100%;
+    color: white;
+}
+
+tr.error_css td.span{
+    font-size: 17px;
+    color:white;
+}
+
+.pic{
+    padding: 7px;
+    width: auto;
+    height: 230px;
+}
+.loader i{
+    font-size:30px
+}
+div#myModal {
+    padding: 15px 15px;
+}
+.modal {
+    /*max-width: 700px;*/
+    max-width: 460px;
+}
+.modal-body {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+.verify_user_result {
+    width: 100%;
+    display: none;
+}
+
+.verifyFacematch {
+   width: 50%;
+}
+
+.verifyLiveness {
+   width: 50%;
+}
+#kyc_completed{
+    width: 100%;
+}
+
+@media screen and (max-width: 807px) {
+
+    /*.site-footer li {
+        padding: 0px 8px 0px 0px !important;
+    }*/
+
+    .controlbtn li i.fa {
+        font-size: 14px !important;
+    }
+
+    .controlbtn li a.btn-float {
+        width: 30px;
+        height: 30px;
+        
+    }
+
+    .controlbtn  li .left-fa-file{
+        width: 35px;
+        height: 35px;
+    }
+
+   #formito_chat .fo-icon{
+        width: 35px;
+        height: 35px;
+    }
+
+    /*.controlbtn li p {
+        color: white;
+        font-size: 10px;
+    }*/
+    /*START added by yogeshvakhre 19-08-2021*/
+    .wd-video-box {
+        bottom: 30px;
+        top: 30px;
+    }
+
+    .site-footer li {
+        padding: 0px 15px 0px 15px !important;
+    }
+    /*END added by yogeshvakhre 19-08-2021*/
+}
+
+@media screen and (max-width: 768px) {
+   .site-footer li {
+        padding: 0px 10px 0px 10px !important;
+    }
+   
+}
+
+@media screen and (max-width: 700px) {
+
+    /*START added by yogeshvakhre 07-09-2021*/
+    .site-footer li {
+        padding: 0px 5px 0px 5px !important;
+    }
+    /*END added by yogeshvakhre 07-09-2021*/
+   
+}
+
+@media screen and (max-width: 650px) {
+    /*START added by yogeshvakhre 19-08-2021*/
+
+    .controlbtn li a.btn-float {
+        width: 28px;
+        height: 28px;
+    }
+
+    .controlbtn li .left-fa-file {
+        width: 32px;
+        height: 32px;
+        left: 10px;
+        bottom: 10px;
+    }
+
+    #formito_chat .fo-icon {
+        width: 32px;
+        height: 32px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .site-footer li {
+        padding: 0px 5px 0px 5px !important;
+    }
+
+    .controlbtn li p {
+       font-size: 10px;
+    }
+    /*END added by yogeshvakhre 19-08-2021*/
+
+    /*START added by yogeshvakhre 07-09-2021*/
+    .switch-camera {
+        width: 20px;
+        height: 20px;
+        display: inline-block  !important;
+    }
+    
+    /*END added by yogeshvakhre 07-09-2021*/
+}
+@media screen and (max-width: 490px) {
+      
+   /*START added by yogeshvakhre 07-09-2021*/   
+    .controlbtn li p {
+       font-size: 9px;
+    }
+    /*END added by yogeshvakhre 07-09-2021*/
+}
+
+@media screen and (max-width: 470px) {
+      
+    
+
+    .controlbtn li .left-fa-file {
+        left: 5px; 
+    }
+
+    #formito_chat .fo-icon {
+        right: 5px;
+    }
+    /*START added by yogeshvakhre 07-09-2021*/
+    .site-footer li {
+        padding: 0px 3px 0px 3px !important;
+    }
+    /*END added by yogeshvakhre 07-09-2021*/
+}
+
+@media screen and (max-width: 425px) {
+
+    #verifyUser ,#resetdata ,#verifyDocumnet{
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .verifyFacematch {
+        width: 100%;
+    }
+
+    .verifyLiveness {
+        width: 100%;
+    }
+
+    h5{
+     font-size: 12px;
+    }
+
+    .table{
+        font-size: 12px;
+    }
+
+    .pic {
+        width: 90%;
+        height: auto;
+    }
+
+    #fm_face{
+        width: 90%;
+        padding-top: 5px;
+    }
+   
+    .camera_photo {
+      
+        height: 130px;
+    }
+
+    .photo-img {
+        height: 100%;
+    }
+
+    button#take_photo_right {
+        padding: 0px 5px;
+    }
+
+    /*added by YogeshVakhre 19-08-2021*/
+    body.fs-15.is-lsv-admin .site-footer li {
+        width: 15%; /*added by YogeshVakhre 07-09-2021*/
+        padding: 0px !important;
+    }
+
+    body.fs-15.is-lsv-user .site-footer li {
+        width: 15%; /*added by YogeshVakhre 07-09-2021*/
+        padding: 0px !important;
+    }
+
+    .site-footer a {
+        margin: 0px;
+    }
+    /*START added by YogeshVakhre 19-08-2021*/
+     
+     .controlbtn li a.btn-float {
+        width: 25px;
+        height: 25px;
+    }
+
+    .controlbtn li .left-fa-file {
+        width: 30px;
+        height: 30px;
+        left: 5px;
+        bottom: 10px;
+    }
+
+    #formito_chat .fo-icon {
+        width: 30px;
+        height: 30px;
+        right: 5px;
+        bottom: 10px;
+    }
+
+    .controlbtn li p {
+        color: unset !important; 
+        font-size: 8px; /*added by YogeshVakhre 07-09-2021*/
+    }
+
+    .wd-video-box {
+        bottom: 60px;
+        top: 20px;
+    }
+
+    /*END added by YogeshVakhre 19-08-2021*/
+}
+
+@media screen and (max-width: 385px) {
+    /* .controlbtn li p {
+        color: unset;
+        
+    } 
+*/
+     /*.controlbtn li a.btn-float {
+        width:25px;
+        height: 25px;
+        
+    }*/
+
+    /*.controlbtn  li .left-fa-file{
+        width: 30px;
+        height: 30px;
+    }*/
+    .wd-video-box {
+        bottom: 60px;
+    }
+   /*#formito_chat .fo-icon{
+        width: 30px;
+        height: 30px;
+    }*/
+}
+
+@media screen and (max-width: 375px) {
+    .wd-video-box {
+     bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .wd-video-box {
+     bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .wd-video-box {
+     bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    h4{
+        font-size: 12px;
+    } 
+
+    img.facematch.h-20px {
+        height: 12px !important;
+
+    }
+
+    .wd-video-box {
+        bottom: 0px;
+    }
+     
+    .site-footer {
+       bottom: 35px;
+    }
+
+    #formito_chat .fo-icon {
+        bottom: 40px;
+    }
+
+    /*START added by yogeshvakhre 18-08-2021 
+    .nd-widget-container_lead ul {
+      margin: 15px 0px !important;
+     }
+
+     .left-fa-file {
+        left: 10px !important;
+        bottom: 18px !important;
+    }
+
+    .fo-icon {
+        right: 14px;
+        bottom: 16px;
+    }
+
+    .site-footer li {
+        width: 19%;
+    }
+    /*END added by yogeshvakhre 18-08-2021 */
+}
+.left-fa-file {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    background-color: #494D75;
+    color: white;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    border-radius: 10rem;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 9;
+    -webkit-box-shadow: 0 0 14px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 14px rgb(0 0 0 / 10%);
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+}
+.site-footer li {
+    padding: 15px 15px 0px 15px;
+}
+/*START added by Yogeshvakhre 17-08-2021 */
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.modal-header-scroll {
+    width: 100%;
+    overflow-x: scroll;
+}
+.modal-header-custom {
+    width: 520px;
+}
+/*.modal-header-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+.modal-header-scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}*/
+
+/*END added by Yogeshvakhre 17-08-2021*/
+
+/*START table responsive added by Yogeshvakhre 18-08-2021*/
+#table-container table { 
+    width: 750px; 
+    border-collapse: collapse; 
+    margin:10px auto;
+    }
+
+/* Zebra striping */
+#table-container tr:nth-of-type(odd) { 
+    background: #eee; 
+    }
+
+#table-container th { 
+    background:white; 
+    /*color: white; */
+    font-weight: bold; 
+    }
+
+#table-container td, th { 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    text-align: center; 
+    font-size: 14px;
+    }
+
+
+/*END table responsive added by Yogeshvakhre 18-08-2021*/
+</style>  
+
+<style type="text/css">
+    
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+@import url(https://fonts.googleapis.com/css?family=Open Sans);
+
+.faq-heading {
+  font-family: Lato;   
+  font-weight: 400;
+  font-size: 14px;
+   -webkit-transition: text-indent 0.2s;
+  text-indent: 5px;
+  color: #333;
+  text-align: left;
+  padding: 5px 0px;
+}
+
+.faq-text {
+  font-family: Open Sans;   
+  font-weight: 400;
+  color: #919191;
+  width:95%;
+  padding-left:20px;
+  margin-bottom:30px;
+}
+
+.faq {
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid #E1E1E1;
+}
+.faq label {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 70px;
+  padding-top:1px;
+  text-align: left;  
+  background-color: #FAFAFA;
+  border-bottom: 1px solid #E1E1E1;
+}
+
+.faq .faq-checkbox {
+  display: none;
+}
+
+.faq .faq-arrow {
+  width: 5px;
+  height: 5px;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-top: 2px solid rgba(0, 0, 0, 0.33);
+  border-right: 2px solid rgba(0, 0, 0, 0.33);
+  float: right;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+ .faq input[type="checkbox"]:checked + label > .faq-arrow {
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+ .faq input[class="checkbox"]:checked + label {
+  display: block;
+  background: rgba(255,255,255,255) !important;
+  color: #4f7351;
+  height: 25px;
+  transition: height 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+ .faq input[type='checkbox']:not(:checked) + label {
+  display: block;
+  transition: height 0.8s;
+  height: 30px;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+ .faq ::-webkit-scrollbar {
+  display: none;
+}
+.faq .btn-success , .faq .btn-danger{
+    padding: 0px 10px;    
+}
+
+</style>     
+<!-- Modal HTML embedded directly into document -->
+ <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  class="modal fade text-left mb-50">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-header-scroll row mx-1 mx-sm-3 mb-0 pb-0 border-0">
+                <div class="modal-header-custom mb-10">
+                    <div class="tabs active" id="tab01">
+                        <h6 class="text-muted">Passport</h6>
+                    </div>
+                    <div class="tabs" id="tab02">
+                        <h6 class="font-weight-bold">National ID</h6>
+                    </div>
+                    <div class="tabs" id="tab03">
+                        <h6 class="text-muted">Signature Capture</h6>
+                    </div>
+                    <div class="tabs" id="tab04">
+                        <h6 class="text-muted">Capture Image</h6>
+                    </div>
+                    <div class="tabs" id="tab05">
+                        <h6 class="text-muted">QA</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="modal-body px-20">
+                <fieldset class="show" id="tab011">
+                    <div class="bg-light text-center py-20">
+                        <button type="button" class="btn btn-primary btn-round my-10" id="verifyDocumnet">
+                         Verify Document</button>
+                        <button type="button" class="btn btn-primary btn-round my-10"  id="verifyUser">Verify User</button>
+                        <button type="button" class="btn btn-secondary btn-round my-10" id="resetdata">
+                         Reset</button>
+                    </div>
+                    <div class="verifyUserloader pb-10 text-center" style="display: none;"><i class="fa fa-spinner fa-spin"></i></div>
+                    <div class="camera_photo pb-20">
+                        <img src="" alt="img-left" class="img-left photo-img  pull-left">
+                        <img src="" alt="img-right" class="img-right photo-img pull-right">
+                    </div>
+                   
+                    <div class="verify_user_result pb-20">
+                        <input type="hidden" name="last_insert_id" id="last_insert_id" value="">
+                        <div class="verifyFacematch text-center  pull-left">
+                            <h6 style="color:#dc1f33;"><img class="facematch h-20px" src="images/ic_facematch.png">&nbsp;<b>FACEMATCH SCORE</b></h6>
+                            <h5 class="text-center" id="resultVerifyFacematch"></h5>
+                        </div>
+                        
+                        <div class="verifyLiveness  text-center pull-right">
+                            <h6 style="color:#dc1f33;"><img class="liviness_img h-20px" src="images/ic_liveness.png"><b> LIVENESS SCORE</b></h6>
+                            <h5 class="text-center" id="resultVerifyLiveness"></h5>  
+                        </div>
+                        
+                    </div>
+                     <div id="resultVerify" class="text-center pb-10"></div>
+                    <div  class="text-center">
+                        
+                       <section class="wow fadeIn mysection" id="result_view" style="display:none">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 psprt">
+                                    <div class="text-align" >
+                               
+                                        <div id="titalcard">
+                                           <!-- <h2>Result</h2>  -->
+                                           <h4 style="color:#dc1f33;" class="pb-20"><b>OCR RESULT</b></h4>
+                                            <div class="document_title" >
+                                                <p>Document Image</p> 
+                                            </div>
+                                            <div class="document_image">
+                                                <img id="im_passport" name="im_passport" class="pic">
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                 
+                                <table class="table table-striped table-bordered text-center" id="pds" style="display:none ;" >
+                                    <thead>
+                                        <tr class="error_css">
+                                            <td colspan="12" style="padding-top: 9px;"><span >OCR</span></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="result_content">
+
+                                    </tbody>
+                                </table>
+                                 
+                                <table class="table table-striped table-bordered text-center" id="pdsmrz">
+                                    <thead>
+                                        <tr class="error_css">
+                                            <td colspan="12" style=""><span>MRZ</span></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="result_content_mrz">
+                                       
+                                    </tbody>
+                                </table>
+                                          
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </fieldset>
+                <fieldset  id="tab021">
+                    
+                    <div class="bg-light text-center pt-20">
+                        <button type="button" class="btn btn-primary btn-round"  id="verifyFacematch">Verify National ID</button>
+                        <button type="button" class="btn btn-secondary btn-round" id="resetFacematch">
+                         Reset</button>
+                    </div>
+                    <div class="pt-20 pb-20 text-center" id="resultVerifyFacematch">
+                    </div>
+                    
+                </fieldset>
+                <fieldset id="tab031">
+                    <div class="bg-light text-center pt-20">
+                        <button type="button" class="btn btn-primary btn-round" id="verifySignature">Verify Signature</button>
+                        <button type="button" class="btn btn-secondary btn-round" id="resetSignature">
+                         Reset</button>
+                         
+                    </div>
+                    
+                    <div class="pt-20 pb-20 text-center" id="resultVerifySignature">
+                    </div>
+                    
+                </fieldset>
+                <fieldset id="tab041">
+                    <form action="#" method="post" id="formCaptureImage">
+                        <div class="bg-light pt-20">
+                            <label for="textfield">Text Field</label>
+                            <input type="text" id="textfield" name="textfield">
+                        </div>
+                        <div class="bg-light text-center pb-5">
+                            <button type="button" class="btn btn-primary btn-round my-10" id="capturebutton">
+                             Capture</button>                       
+                        </div>
+                    </form>
+                    <div id="resultcapture" class="text-center pb-10"></div>
+                    <div class="bg-light text-center">
+                        <h4 class="py-10" id="tableHeading"></h4>
+                        <div id="table-container"></div>
+                    </div>
+                    
+                </fieldset>
+                <fieldset id="tab051">
+                     
+                    <div class="bg-light text-center my-20">
+
+                       <div class='faq'>
+                         <!-- <input id='faq-a' type='checkbox' class="faq-checkbox">
+                          <label for='faq-a'>
+                            <p class="faq-heading">How do I purchase Brainitz?</p>
+                            <div class='faq-arrow'></div>
+                              <p class="faq-text"> 
+                                <button class="btn btn-sm btn-success">Correct</button>
+                                <button class="btn btn-sm btn-danger">Uncorrect</button>     
+                              </p>
+                          </label>
+                          <input id='faq-b' type='checkbox' class="faq-checkbox">
+                          <label for='faq-b'>
+                            <p class="faq-heading">Do you have professional development trainings available?</p>
+                            <div class='faq-arrow'></div>
+                              <p class="faq-text"> 
+                                <button class="btn btn-sm btn-success">Correct</button>
+                                <button class="btn btn-sm btn-danger">Uncorrect</button>  
+                              </p>
+                          </label>
+                          <input id='faq-c' type='checkbox' class="faq-checkbox">
+                          <label for='faq-c'>
+                            <p class="faq-heading">Does Brainitz accept purchase orders?</p>
+                            <div class='faq-arrow'></div>
+                              <p class="faq-text">
+                                    <button class="btn btn-sm btn-success">Correct</button>
+                                    <button class="btn btn-sm btn-danger">Uncorrect</button>  
+                               </p>
+                          </label>
+                          <input id='faq-d' type='checkbox' class="faq-checkbox">
+                          <label for='faq-d'>
+                            <p class="faq-heading">What are the technical requirements for Brainitz?</p>
+                            <div class='faq-arrow'></div>
+                              <p class="faq-text">
+                                 <button class="btn btn-sm btn-success">Correct</button>
+                                 <button class="btn btn-sm btn-danger">Uncorrect</button>  
+                               </p>
+                          </label>
+                          <input id='faq-e' type='checkbox' class="faq-checkbox">
+                          <label for='faq-e'>
+                            <p class="faq-heading">Can I add a PowerPoint to Brainitz</p>
+                            <div class='faq-arrow'></div>
+                                <p class="faq-text">
+                                    <button class="btn btn-sm btn-success">Correct</button>
+                                    <button class="btn btn-sm btn-danger">Uncorrect</button>  
+                               </p>
+                          </label>
+                            <input id='settings' type='checkbox' class="faq-checkbox">
+                          <input id='faq-f' type='checkbox' class="faq-checkbox">
+                          <label for='faq-f'>
+                            <p class="faq-heading">Did my student really get logged out and lose their progress?</p>
+                            <div class='faq-arrow'></div>
+                              <p class="faq-text"> 
+                                 <button class="btn btn-sm btn-success">Correct</button>
+                                 <button class="btn btn-sm btn-danger">Uncorrect</button>  
+                              </p>
+                          </label>-->
+                        </div>
+                    </div>
+
+                </fieldset>
+                <div class="loader pb-40 text-center" style="display: none;"><i class="fa fa-spinner fa-spin"></i></div>
+
+                
+            </div>
+            <div class="line"></div>
+            
+            <div class="modal-footer d-flex flex-column text-center border-0">
+                <button type="button" class="btn btn-success btn-round my-10" id="kyc_completed">KYC Completed</button>
+                <!-- <a class="btn btn-danger pull-right " href="#" rel="modal:close">Close</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Crypto js added by Yogeshvakhre 17-08-2021 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#changeView").click();          
+
+
+        // if(screen.width>425) {
+        //     $("#changeView").click();
+        // }
+       //open modal
+        $(".myBtn").click(function(){
+           // console.log('abc');
+             // show Modal
+             $('#myModal').modal('show');
+             
+        });
+
+        // reset data result
+        $("#resetdata").click(function(){
+
+            $('#result_content').html('');
+            $('#result_content_mrz').html('');
+            $('#last_insert_id').val('');
+            $(".camera_photo").css("display","none"); 
+            $("#result_view").css("display","none"); 
+            $(".verify_user_result").css("display","none");
+            $('#resultVerifyLiveness').html('');
+            $('#resultVerifyFacematch').html('');
+            $('#resultVerify').html(""); 
+            $(".img-left").attr("src","");
+            $(".img-right").attr("src","");
+        });
+       
+        // verifyLiveness
+        $("#verifyDocumnet").on('click', function () {
+            $('#resultVerify').html(""); 
+            $("#result_view").css("display","none"); 
+            $(".loader").css("display","block"); 
+            $('#last_insert_id').val('');
+            //$('#result').html("");    
+            $('#snapshot').trigger('click'); //added click issue by YogeshVakhre 12-08-2021 
+            var image = $('#snapshotLink').attr('href');
+            document.getElementById("im_passport").src = image;
+            //console.log("image atteach:"+image);
+            formData= {card_code:"MRZ",country_code:"ROU",scan_image_base64:image};
+             $.ajax({
+                url: "https://dev.accurascan.com/api/v4/ocr",
+                headers: { 'Api-Key': '161486315932Eo5KUDTzMmWo6tRcw4LNKTFshDETRMHG23ucjZ' ,'Access-Control-Allow-Orgin':'*'},
+                data: formData,
+                type: "POST",
+                success: function (data) {
+                    $("#result_view").css("display","block");
+                    var selecard="MRZ";
+                    var finaldata =JSON.stringify(jsonconvert(data));
+                    ocrfm_data = finaldata;
+                    var JSONObject = JSON.parse(finaldata);
+                    
+                    if(JSONObject.Message != "Success"){
+                        $('#result_content').html('');
+                        $('#result_content_security').html('');
+                        $('#result_content_mrz').html('');
+                        $("#im_passport").attr("src","");
+                        
+                        // $("#scanPassortBlock").css("visibility","hidden");
+                        $("#result_view").css("display","block"); 
+                        $(".loader").css("display","none");
+                        $(".error_css").css("display","none");
+                        $("#pdsmrz").css("display","none");
+                        //$(".psprt").css("display","none");
+                        $("#tb_security").css("display","none");
+                        $(".psprt").addClass("col-lg-9","col-md-9");
+                        $(".psprt").addClass("col-md-9");
+                        $(".psprt").removeClass("col-md-6");
+                        $(".psprt").removeClass("col-lg-6");
+                        $("#titalcard").css("display","none");
+                        $("#docum").css("display","block");
+                        $("#rsm").css("margin-top","0px");
+                        $("#fm_btn").css("display","none");
+                        $("#result_content_pdf417").html("");
+                        $("#tb_pdf417").css("display","none");
+                        $("#pds").css("display","");
+
+                         
+                        $('#result_content').append('<tr><td colspan="12" ><i class="fa fa-warning" style="color:red;"></i> '+ JSONObject.Message +'</td></tr>'); 
+                        return false;
+                    }
+                       
+                     $('#result_content').html('');
+                     $('#result_content_security').html('');
+                     $('#result_content_mrz').html('');
+                     if(selecard == "MRZ"){
+                         $('#result_content_mrz').append('<tr id="faceimgmrz"></tr>');
+                     }
+                     $(".loader").css("display","none");
+                     $(".error_css").css("display","");
+                     $("#im_face").css("display","none");
+                     $("#result_content_pdf417").html("");
+
+                     $("#tb_pdf417").css("display","none");
+                     $("#tb_security").css("display","none");
+                     $("#pdsmrz").css("display","none");
+                     //$(".psprt").css("display","none");
+                     $("#pds").css("display","none");
+                     $("#rsm").css("margin-top","-60px");
+                     $("#titalcard").css("display","block");
+                     var mrzData =  JSONObject.data.MRZdata;
+                     
+                     var mrzDataLength=mrzData.MRZ ?? 0;
+                    // console.log("faceimage:"+ JSONObject.data.MRZdata.face_image ==false);
+                    //console.log("mrz1111");
+                    if( mrzDataLength != 0){
+                      //console.log("mrz");
+                      $.each(JSONObject.data.MRZdata, function (index, value) {
+
+                        var keydata  = index.replace(/[\_]/g, ' ');
+                            if(keydata == "mrz"){
+                              var finalkey  = keydata.toUpperCase();
+                            }else{
+                                var finalkey = keydata.substr(0,1).toUpperCase()+keydata.substr(1);
+                            }
+                         if(index != "face_image"){
+                            
+                                if(finalkey == "MRZ"){
+                                      var datas = value.replace("</br>", "");
+                                      $('#result_content_mrz').append('<tr><td style="vertical-align: middle;border: 1px solid red;width: 50%;">'+ finalkey +'</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" ><p id="addmrzp" style="word-break: break-all;"></p></td></tr>'); 
+                                }else{
+                                    if(finalkey != "Srcimg"){
+                                        $('#result_content_mrz').append('<tr><td style="border: 1px solid red;vertical-align: middle;width: 50%;">'+ finalkey +'</td><td style="border: 1px solid red;vertical-align: middle;width: 50%;" >'+ value +'</td></tr>');
+                                    }
+                                }
+                                $('#addmrzp').text(datas);
+                        }else{
+                            if(selecard=="MRZ"){
+                                //$("#fm_btn").css("display","inline-block");
+                                if ( JSONObject.data.MRZdata.face_image != "false") {  
+                                     $(".img-left").attr("src",value);
+                                     $('#faceimgmrz').append('<td style="vertical-align: middle;border: 1px solid red;width: 50%;">Face</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" ><img width="100" id="fm_face" src="'+value+'" style="border-radius: 0px;"/></td>');
+                                    //console.log("test1true");
+                                   
+                                }
+                            }
+                        }
+                     });
+                        //console.log("ocr save details");
+                        // START save ocr detsils  added by Yogesh Vakhre 04-08-2021
+                        var docuimg = $("#im_passport").attr('src');
+                        var scantype='passport';
+                        var mrzData = JSON.stringify(mrzData);
+                        var type="ocr";
+                        vedioKycSavedata(mrzData,docuimg,scantype,type);
+                       // END save ocr detsils  added by Yogesh Vakhre 04-08-2021 
+                        $(".psprt").css("display","inline-block");
+                        $("#pdsmrz").css("display","inline-table");
+                    }else{
+                         $("#pdsmrz").css("display","none");
+                        // $(".psprt").css("display","none");
+                          //console.log("nomrz");  
+                         $('#resultVerify').html('<h5><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!!</h5>'); 
+                    }
+                  
+                   /* var ocrData=JSONObject.data.ocrdata;
+                    if(Object.keys(ocrData).length != 0 ){
+                            // PreviewImg(files);
+                            $.each(JSONObject.data.ocrdata, function (index, value) {
+                           var n = value.indexOf("data:image/png;base64");
+                           if(n != 0){
+                               if(index.toUpperCase()!= "MRZ"){
+                                   if(value != ""){
+                                        $('#result_content').append('<tr><td style="vertical-align: middle;border: 1px solid red;width: 50%;">'+ index +'</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" >'+ value +'</td></tr>');
+                                   }
+                               }
+                           }else{
+                               if(index.toUpperCase() == "FACE"){
+                                //$(".camera_dev").css("display","inline-block");
+                                //$(".camera_photo").css("display","inline-block"); 
+                                   $(".img-left").attr("src",value);
+                                   $('#result_content').append('<tr><td style="vertical-align: middle;border: 1px solid red;width: 50%;" >'+ index +'</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" ><img width="100" id="fm_face" src="'+value+'" style="border-radius: 0px;"/></td></tr>');
+                                   $("#fm_btn").css("display","block");
+                               }else{
+                                   $('#result_content').append('<tr><td style="vertical-align: middle;border: 1px solid red;width: 50%;" >'+ index +'</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" ><img width="100" src="'+value+'" style="border-radius: 0px;"/></td></tr>');
+                               }
+                           }
+
+                            });
+                                
+                                $("#pds").css("display","");
+                                
+                    }else{
+                        $("#pds").css("display","none");
+                    }*/
+                    $("#rsm").addClass("col-lg-9");
+                    $("#rsm").addClass("col-md-9");
+                    $("#rsm").removeClass("col-md-8");
+                    $("#rsm").removeClass("col-lg-8");
+                    $(".psprt").removeClass("col-md-6");
+                    $(".psprt").removeClass("col-lg-6");
+                    $(".psprt").addClass("col-lg-8");
+                    $(".psprt").addClass("col-md-8");
+                    $("#pds").css({"margin-left":"0px","margin-top":"0px"});
+                    //  $("#pds").css("display","");
+                    $(".loader").css("display","none");    
+                    // if(ocrData.length == 0 || mrzData.length == 0){
+                    if( mrzDataLength == 0){
+                        //$(".loader").css("display","block");
+                        // $("#scanPassortBlock").css("visibility","hidden");
+                        $("#result_view").css("display","block"); 
+                        $(".loader").css("display","none");
+                        $(".error_css").css("display","none");
+                        $("#pdsmrz").css("display","none");
+                        $("#titalcard").css("display","none");
+                        $("#tb_security").css("display","none");
+                        $(".psprt").addClass("col-lg-9","col-md-9");
+                        $(".psprt").addClass("col-md-8");
+                        $(".psprt").removeClass("col-md-6");
+                        $(".psprt").removeClass("col-lg-6");
+                        $("#rsm").css("margin-top","0px");
+                        $("#pds").css("display","none");
+                        $("#docum").css("display","block"); 
+                        $("html, body").animate({ scrollTop: 500 }, 500);
+                        $('#result_content').append('<tr><td colspan="12" ><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!! </td></tr>');   
+                    }else{
+                        document.getElementById("im_passport").src = image;
+                        var fmScore = "";
+                        var face_image = "";
+                        // var docuimg = $('#uplodimg')[0].files[0];
+                        var docuimg = $("#im_passport").attr('src');
+                        //sendemail(finaldata,docuimg,fmScore,face_image);
+                    }
+
+                            
+                     
+                   
+                      
+                    //console.log(result);
+                },
+                error: function (error) {
+                   $(".loader").css("display","none");
+                   $("#result_view").css("display","block"); 
+                   $('#result_content').append('<tr><td colspan="12" ><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!!</td></tr>');
+                  // $('#result').append('<h5><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!!</h5>'); 
+                    console.log(error);
+                }
+            })
+        });
+        //json convert  
+        function jsonconvert(data){
+            return jQuery.parseJSON(data);
+        } 
+       
+
+        // verify user
+        $("#verifyUser").on('click', function () {
+
+            $('#resultVerifyFacematch').html(""); 
+            $('#resultVerifyLiveness').html(""); 
+            $('#resultVerify').html(""); 
+            $(".verify_user_result").css("display","none");
+            //$(".loader").css("display","block"); 
+            $('#snapshot').click();
+            var imageright = $('#snapshotLink').attr('href');
+                $(".img-right").attr("src",imageright);
+            var imageleft = $(".img-left").attr("src");
+            
+
+            if ($('.img-left').attr("src").length ==0) {
+               $('#resultVerify').html('<center><h5 class="text-center"><i class="fa fa-warning" style="color:red;"></i>Please put another card ,beacause face not detected ..!!</h5></center>'); 
+            }else{
+
+                $(".verifyUserloader").css("display","block"); 
+                $(".camera_photo").css("display","block");
+                var facematch_title ='<div class="py-10"><h4 style="color:#dc1f33;"><img class="facematch h-20px" src="images/ic_facematch.png">&nbsp;<b>FACEMATCH SCORE</b></h4></div>';
+                 //console.log("image atteach:"+image);
+                formData= {source_image_base64:imageleft,target_image_base64:imageright};
+                // calll facematch api 
+                $.ajax({
+                    url: "https://dev.accurascan.com/v2/api/facematch",
+                    headers: { 'Api-Key': '1612530311yRxNgvCD9bPhAlUXpfPad8Q1hZiWirDAgVCrTQF1'},
+                    data: formData,
+                    type: "POST",
+                    success: function (result) {
+                            
+                            $(".verifyUserloader").css("display","none");
+                            $(".verify_user_result").css("display","block");
+                            
+                            if (result.status==true) {
+                               
+                                $('#resultVerifyFacematch').html(result.data.match_score);
+                                var facematch_score=$('#resultVerifyFacematch').html(); 
+                                //call liviness api 
+                                liviness_api(facematch_score,imageleft,imageright);
+                                
+                            }else{
+                             $('#resultVerify').html("<h5><i class='fa fa-warning' style='color:red;'></i>"+result.message+"</h5>");      
+                             }    
+                        
+                        
+                       // console.log(result.message);
+                    },
+                    error: function (error) {
+                      $(".verifyUserloader").css("display","none");
+
+                       $('#resultVerify').html('<h5><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!!</h5>'); 
+                       
+                        console.log(error);
+                    }
+                });                 
+              
+               
+            }
+            
+           
+        });
+
+        //call liviness api 
+        function  liviness_api(facematch_score ,imageleft,imageright) {
+            
+            var liveness_title ='<div class="py-10"><h4 style="color:#dc1f33;"><img class="liviness_img h-20px" src="images/ic_liveness.png"><b> LIVENESS SCORE</b></h4></div>';
+                //call liviness api
+                $.ajax({
+                    url: "https://dev.accurascan.com/v2/api/liveness",
+                    headers: { 'Api-Key':'1620632348AQNgEt0tTVyYPMdr2BlTXrTpBQmpx14SaPzAUZFy'},
+                    data: { liveness_image: imageright },
+                    type: "POST",
+                    success: function (result) {
+                        
+                            $(".verifyUserloader").css("display","none");
+                            if (result.status==true) {
+                                
+                                $('#resultVerifyLiveness').html(result.data.score+"%"); 
+                                
+                                var liveness_score=$('#resultVerifyLiveness').html(); 
+                                //console.log("score:"+facematch_score); 
+                                //console.log("score:"+liveness_score);   
+                                
+                                // Start face and liviness details save 03/08/2021
+
+                                    var docuimg = '';
+                                    var scantype='passport';
+                                    var data={
+                                        ocrface:imageleft,
+                                        faceimage:imageright,
+                                        livenessscore:liveness_score,
+                                        facematchscore:facematch_score
+                                    }
+                                    var type="liveface";
+                                    //console.log(JSON.stringify(data));
+                                    vedioKycSavedata(data,docuimg,scantype,type);
+
+                                // END face and liviness details save 03/08/2021
+
+                               // console.log("score:"+liveness_score);    
+                            }else{
+                                 $('#resultVerify').html("<h5><i class='fa fa-warning' style='color:red;'></i>"+result.message+"</h5>");      
+                            }
+                        
+                       // console.log(result);
+                    },
+                    error: function (error) {
+                         
+                     $(".verifyUserloader").css("display","none");
+                       $('#resultVerify').html('<h5><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!!<h5>'); 
+                        console.log(error);
+                    }
+                });
+        }     
+        //save vedeio kyc data 
+        function vedioKycSavedata(data,docuimg,scantype,type) {
+                
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var meetingid = urlParams.get('room')
+
+                if (type=="ocr") {
+                   var formData ={
+                        meeting_id: window.btoa(meetingid),  
+                        scan_data: window.btoa(data),
+                        scan_image:window.btoa(docuimg),
+                        scan_type: window.btoa(scantype) 
+                    };
+                }else{
+                    var last_id=$('#last_insert_id').val();
+                    //console.log("test"+last_id);
+                    var formData ={
+                        last_insert_id:window.btoa(last_id),
+                        meeting_id: window.btoa(meetingid),
+                        face_image: window.btoa(data.faceimage),  
+                        liviness_image: window.btoa(data.faceimage), 
+                        facematch_score: window.btoa(data.facematchscore),
+                        liviness_score: window.btoa(data.livenessscore),
+                        scan_type:window.btoa(scantype) 
+                    };
+                } 
+               
+                $.ajax({
+                    url: "https://videokyc-dev.accurascan.com/pages/save-videokyc-data.php",
+                    data: formData,
+                    type: "POST",
+                    success: function (result) {
+                        //console.log("testlast_id:"+result.last_id);
+                        if (result.last_id !="" && typeof result.last_id !== 'undefined') {
+                            //console.log("last_id:"+result.last_id);
+                            $("#last_insert_id").val(result.last_id); 
+                        }
+                         
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+        }     
+        
+
+    });   
+</script>
+
+<!--START onclick text added by YogeshVakhre 05-08-2021-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        //add text video on/off
+        $("#showHideVideo").click(function(){
+            $("#video_text").text($("#video_text").text() == 'Video On' ? 'Video Off' : 'Video On');
+        });
+      
+         //add text audio hare on/off
+        $("#showHideAudio").click(function(){
+            $("#audio_text").text($("#audio_text").text() == 'Audio On' ? 'Audio Off' : 'Audio On');
+        });
+
+        //add text Screen Share Session  on/off
+        $("#startscreenshare").click(function(){
+            $("#screenshare_text").text($("#screenshare_text").text() == 'Screenshare On' ? 'Screenshare Off' : 'Screenshare On');
+        });
+
+        //add text Screen Share Session  on/off added by YogeshVakhre 24-08-2021- 
+        $("#startRecording").click(function(){
+            $("#recording_text").text($("#recording_text").text() == 'Recording On' ? 'Recording Off' : 'Recording On');
+        });
+         
+    });
+</script>
+<!--END onclick text added by YogeshVakhre 05-08-2021-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $("#snapshotLi").hide(); //added by YogeshVakhre 19-08-2021
+    if (isLsvAdmin) { 
+        //console.log("isLsvAdmin"+isLsvAdmin)   
+        $("#locationLi").hide();
+        $(".kycbutton").css("display","inline-block"); 
+        $("body").addClass('is-lsv-admin'); //added by YogeshVakhre 19-08-2021  
+        faqLoad();//added by YogeshVakhre 23-08-2021  
+        LoadMapLocation();// load user map location with longitude and latitude 26-08-2021
+        //display load captureimage  video kyc data added by yoegeshvakhre 18-08-2021
+        loadDataCaptureImage();
+     
+        
+    }else{
+        var serverPoll = setInterval( function(){
+            //display load captureimage  video kyc data added by yoegeshvakhre 18-08-2021
+            loadDataCaptureImage();
+
+            //display load last video kyc data added by yoegeshvakhre 18-08-2021
+            loadSaveKycDataRecord();
+        }, 10000 );
+       // clearInterval(serverPoll);
+        
+        //console.log(isLsvAdmin)
+        getCurrentAddress();  //add map location with longitude and latitude 12-08-2021 
+        setTimeout(function(){  addMapLocation(); }, 3000);// add map location with longitude and latitude 26-08-2021 
+        $(".kycbutton").css("display","inline-block");
+        $("#locationLi").show();
+        $("#verifyDocumnet").hide();
+        $("#verifyUser").hide();
+        $("#resetdata").hide();
+        $("#formCaptureImage").hide();
+        $("body").addClass('is-lsv-user'); //added by YogeshVakhre 19-08-2021 
+        $("#tab05").hide(); //added by YogeshVakhre 20-08-2021 
+        
+    }
+
+   
+        // cature image data added by yoegeshvakhre 17-08-2021
+        $("#capturebutton").on('click', function () {
+            $("#table-container").html("");
+            $('#resultcapture').html(""); 
+            $(".loader").css("display","block");    
+            $('#snapshot').click();
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var meetingid = urlParams.get('room')
+            var image = $('#snapshotLink').attr('href');
+            var textfield = $('#textfield').val();
+            var formData ={
+                meeting_id:window.btoa(meetingid),
+                scan_data:window.btoa(textfield),
+                scan_image: window.btoa(image),
+                scan_type:window.btoa('captureimage')
+            };
+            $.ajax({
+                url: "https://videokyc-dev.accurascan.com/pages/save-videokyc-data.php",
+                data: formData,
+                type: "POST",
+                success: function (result) {
+                    $(".loader").css("display","none");
+                    if (result.status==true) {
+                      var textfield = $('#textfield').val("");
+                        $('#resultcapture').html("<p><i class='fa fa-check' style='color:green;'></i>"+result.message+"</p>");
+
+     
+                        loadDataCaptureImage();//display load captureimage  video kyc data added by yoegeshvakhre 18-08-2021
+                         
+                    }
+                  
+
+                    console.log(result);
+                },
+                error: function (error) {
+                     
+                 $(".loader").css("display","none");
+                   $('#resultcapture').html('<h5><i class="fa fa-warning" style="color:red;"></i> Something went wrong..!!</h5>'); 
+                    console.log(error);
+                }
+            })
+        });
+
+    //START display last video kyc data added by yoegeshvakhre 18-08-2021
+    //console.log("display kyc data");
+    function loadSaveKycDataRecord(){
+        //$(".loader").show();   
+        $("#result_content_mrz").html("");
+        $(".psprt").hide();
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var meetingid = urlParams.get('room');
+       //console.log(meetingid);
+        formData= {meeting_id:window.btoa(meetingid),scan_type:window.btoa("passport")};
+         $.ajax({
+            url: "https://videokyc-dev.accurascan.com/pages/list-save-videokyc-data.php",
+            data: formData,
+            type: "POST",
+            success: function (result) {
+                $(".loader").hide();   
+                if (result.status==true) {
+                    $(".psprt").css("display","inline-block");// added by yogeshvakhre 09-09-2021
+                    $("#result_view").show();
+                    // added by yogeshvakhre 09-09-2021
+                    if (result.data.face_image== null && result.data.liviness_image ==null) {
+                        $(".verify_user_result").hide();
+                        $(".camera_photo").hide(); 
+                        
+                    }else{
+                        $(".camera_photo").show();
+                        $(".verify_user_result").show();
+                        $(".img-right").attr("src",result.data.face_image);
+                        $(".img-left").attr("src",result.data.liviness_image);
+                    }
+                    //END added by yogeshvakhre 09-09-2021
+
+                    $("#resultVerifyFacematch").html(result.data.facematch_score);
+                    $("#resultVerifyLiveness").html(result.data.liviness_score);
+                    $("#im_passport").attr("src",result.data.scan_image);
+
+                     
+                    let mrzData =  JSON.parse(result.data.scan_data);
+                    let selecard="MRZ";
+                    let mrzDataLength=mrzData.MRZ ?? 0;
+                   //console.log(mrzData);
+                    if( mrzDataLength != 0){
+                          //console.log("mrz");
+                          $('#result_content_mrz').append('<tr id="faceimgmrz"></tr>');
+                           
+                          $.each(mrzData, function (index, value) {
+
+                            var keydata  = index.replace(/[\_]/g, ' ');
+                                if(keydata == "mrz"){
+                                  var finalkey  = keydata.toUpperCase();
+                                }else{
+                                    var finalkey = keydata.substr(0,1).toUpperCase()+keydata.substr(1);
+                                }
+                             if(index != "face_image"){
+                                
+                                    if(finalkey == "MRZ"){
+                                          var datas = value.replace("</br>", "");
+                                          $('#result_content_mrz').append('<tr><td style="vertical-align: middle;border: 1px solid red;width: 50%;">'+ finalkey +'</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" ><p id="addmrzp" style="word-break: break-all;"></p></td></tr>'); 
+                                    }else{
+                                        if(finalkey != "Srcimg"){
+                                            $('#result_content_mrz').append('<tr><td style="border: 1px solid red;vertical-align: middle;width: 50%;">'+ finalkey +'</td><td style="border: 1px solid red;vertical-align: middle;width: 50%;" >'+ value +'</td></tr>');
+                                        }
+                                    }
+                                    $('#addmrzp').text(datas);
+                            }else{
+                                if(selecard=="MRZ"){
+                                    //$("#fm_btn").css("display","inline-block");
+                                    if (  mrzData.face_image != "false") {  
+                                         $(".img-left").attr("src",value);
+                                         $('#faceimgmrz').append('<td style="vertical-align: middle;border: 1px solid red;width: 50%;">Face</td><td style="vertical-align: middle;border: 1px solid red;width: 50%;" ><img width="100" id="fm_face" src="'+value+'" style="border-radius: 0px;"/></td>');
+                                        //console.log("test1true");
+                                       
+                                    }
+                                }
+                            }
+                        }); 
+
+                        $("#pdsmrz").css("display","inline-table");
+                    } 
+                }else{
+                    $(".camera_photo").hide();
+                    $(".psprt").hide();
+                    $(".verify_user_result").hide();
+                    $("#resultVerifyFacematch").html("");
+                    $("#resultVerifyLiveness").html("");
+                    $("#im_passport").attr("src","");
+                }
+                //console.log(result);  
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+   //END display last video kyc data added by yoegeshvakhre 18-08-2021
+  
+  //END display capture image video kyc data added by yoegeshvakhre 18-08-2021
+     function loadDataCaptureImage(){
+        $(".loader").show();
+        $("#table-container").html("");
+        $("#tableHeading").html("");
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+        let meetingid = urlParams.get('room');
+        //console.log(meetingid);
+        formData= {meeting_id:window.btoa(meetingid),scan_type:window.btoa("captureimage")};
+        $.ajax({    
+            type: "POST",
+            url: "https://videokyc-dev.accurascan.com/pages/list-save-videokyc-data.php",
+            data: formData,             
+            dataType: "html",                  
+            success: function(data){
+                $("#tableHeading").html('List Capture Images');
+                $(".loader").hide();                    
+                $("#table-container").html(data); 
+               
+            }
+        });
+
+    };
+   //END display capture image video kyc data added by yoegeshvakhre 18-08-2021
+    
+    //END display question answer added by yoegeshvakhre 23-08-2021 
+    function faqLoad() {
+       
+        //console.log(meetingid);
+        $(".loader").show();             
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+        let meetingid = urlParams.get('room');
+        formData= {meeting_id:window.btoa(meetingid)};
+        $.ajax({    
+            type: "POST",
+            url: "https://videokyc-dev.accurascan.com/pages/list-question-answer.php",
+            headers: { 'api-key':'V9zsiI2jo8CRQrnocdMDz6uYSFVsVJ'},
+            data: formData,             
+            dataType: "html",                  
+            success: function(data){
+                $(".loader").hide();                    
+                $(".faq").html(data); 
+               
+            }
+        });
+    }
+    //END display question answer added by yoegeshvakhre 23-08-2021
+    
+    //START add map location with longitude and latitude 12-08-2021 
+
+        //add text Location on/off
+        $("#showHideLocation").click(function(){
+            //$("#location_text").text($("#location_text").text() == 'Location On' ? 'Location Off' : 'Location On');
+            if ($("#location_text").text() == 'Location On') {
+                $("#location_text").text('Location Off');
+                document.getElementById("latlng").value = "";
+                document.getElementById("maplocation").value = ""; 
+            }else{
+               $("#location_text").text('Location On');
+               setTimeout(function(){  addMapLocation(); }, 3000);// add map location with longitude and latitude 26-08-2021 
+               getCurrentAddress();
+               
+            }
+        });
+
+        function getCurrentAddress() {
+            
+           if(navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                  let lat =position.coords.latitude;
+                  let lng =position.coords.longitude;
+                  positionInfo = "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude;
+                  //console.log(positionInfo);
+
+                  //GetAddress(lat, lng);
+                  var latlng = new google.maps.LatLng(lat, lng);
+                  var geocoder = geocoder = new google.maps.Geocoder();
+                  geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                      if (status == google.maps.GeocoderStatus.OK) {
+                          if (results[1]) {
+                             // console.log("Location: " + results[1].formatted_address);
+                              //alert("Location: " + results[1].formatted_address);
+                              document.getElementById("maplocation").value = results[1].formatted_address;
+                          }
+                      }
+                  });
+                  //e.fillText(positionInfo, c.width/1.58, c.height/1.03);
+                  document.getElementById("latlng").value = positionInfo;
+
+              });
+          } else {
+              alert("Sorry, your browser does not support HTML5 geolocation.");
+          }
+        }
+
+        //END add map location with longitude and latitude 12-08-2021 
+        //START MapLocation added by yogeshvakhre 26-08-2021  
+        function addMapLocation() {
+            
+                    let queryString = window.location.search;
+                    let urlParams = new URLSearchParams(queryString);
+                    let meetingid = urlParams.get('room');
+                    var latlng = $("#latlng").val();
+                    var maplocation=$("#maplocation").val();
+                    formData= {meeting_id:window.btoa(meetingid),location:window.btoa(maplocation),latlong:window.btoa(latlng)};
+                    $.ajax({    
+                        type: "POST",
+                        url: "https://videokyc-dev.accurascan.com/pages/location.php",
+                        data: formData,             
+                        success: function(data){
+                          // console.log(data);
+                           
+                        }
+                    });
+
+
+        }
+        function LoadMapLocation() {
+            
+            let queryString = window.location.search;
+            let urlParams = new URLSearchParams(queryString);
+            let meetingid = urlParams.get('room');
+            formData= {meeting_id:window.btoa(meetingid),crud:window.btoa('select')};
+            $.ajax({    
+                type: "POST",
+                url: "https://videokyc-dev.accurascan.com/pages/location.php",
+                data: formData,             
+                success: function(data){
+                  console.log(data);
+                  if (data != false) {
+                    $("#latlng").val(data.latlong);
+                    $("#maplocation").val(data.location);
+                  }
+                }
+            });
+
+
+        }    
+
+    //END MapLocation added by yogeshvakhre 26-08-2021   
+
+    $(".tabs").click(function() {
+       // $('#result').html(""); 
+        //$("#result_view").css("display","none");  
+       // $(".loader").css("display","none");
+
+        $(".tabs").removeClass("active");
+        $(".tabs h6").removeClass("font-weight-bold");
+        $(".tabs h6").addClass("text-muted");
+        $(this).children("h6").removeClass("text-muted");
+        $(this).children("h6").addClass("font-weight-bold");
+        $(this).addClass("active");
+
+        current_fs = $(".active");
+
+        next_fs = $(this).attr('id');
+        next_fs = "#" + next_fs + "1";
+
+        $("fieldset").removeClass("show");
+        $(next_fs).addClass("show");
+
+        current_fs.animate({}, {
+            step: function() {
+                current_fs.css({
+                    'display': 'none',
+                    'position': 'relative'
+                });
+                next_fs.css({
+                    'display': 'block'
+                });
+            }
+        });
+    });
+
+});
+</script>
+
+<script>
+//START disable inspect element added by yogeshvakhre 09-09-2021
+$(document).bind("contextmenu",function(e) {
+     e.preventDefault();
+});
+
+document.onkeydown = function(e) {
+    if(event.keyCode == 123) {
+        return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+        return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+        return false;
+    }
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+        return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+        return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)){
+        return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'H'.charCodeAt(0)){
+        return false;
+    }
+    if(e.ctrlKey && e.keyCode == 'A'.charCodeAt(0)){
+        return false;
+    }
+    /*if(e.ctrlKey && e.keyCode == 'F'.charCodeAt(0)){
+        return false;
+    }*/
+    if(e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)){
+        return false;
+    }
+}
+//END disable inspect element added by yogeshvakhre 09-09-2021
+</script>
