@@ -34,9 +34,9 @@
 @endsection
 @section('scripts')
     <script>
-        let agentUrl = "{{ \App\Models\Room::first()->agenturl }}"
-        let visitorUrl = "{{ \App\Models\Room::first()->visitorurl }}";
-        let viewerBroadcastLink = "{{ \App\Models\Room::first()->visitorurl_broadcast }}"
+        let agentUrl = "{{ \App\Models\Room::first()->agenturl ?? '' }}"
+        let visitorUrl = "{{ \App\Models\Room::first()->visitorurl ?? '' }}";
+        let viewerBroadcastLink = "{{ \App\Models\Room::first()->visitorurl_broadcast ?? '' }}"
     </script>
     <script src="{{ mix('assets/js/rooms/create_edit.js') }}"></script>
 @endsection

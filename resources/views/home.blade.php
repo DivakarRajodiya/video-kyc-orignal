@@ -105,7 +105,7 @@
                         </div>
                         <div class="card-body">
                             @php
-                                $file = public_path('\assets\files\pages\version.txt');
+                                $file = public_path('assets/files/pages/version.txt');
 
                                 $versionFile = fopen($file, 'r') or die("Unable to open file!");
                                 $currentVersion = fread($versionFile, filesize($file));
